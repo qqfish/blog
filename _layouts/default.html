@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<title>{{ page.title }}</title>
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+	</head>
+	<body{%if page.id %} id="{{ page.id }}"{% endif %}>
+		{{ content }}
+		{% include script.html %}
+	</body>
+</html>
