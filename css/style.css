@@ -3576,7 +3576,7 @@ ul.icons li .icon-large:before {
 
 html,
 body {
-  background: #DADADA;
+  background: #F0F2F6;
 }
 
 body {
@@ -3715,14 +3715,11 @@ aside nav a {
 .main article .author,
 .main article .category {
   color: #CDCDCD;
-  display: -moz-inline-box;
-  -moz-box-orient: vertical;
+  display: -moz-inline-stack;
   display: inline-block;
   vertical-align: middle;
   *vertical-align: auto;
-}
-.main article .author,
-.main article .category {
+  zoom: 1;
   *display: inline;
 }
 .main article .author:before,
@@ -3740,13 +3737,11 @@ aside nav a {
 .main article .category ul {
   overflow: hidden;
   *zoom: 1;
-  display: -moz-inline-box;
-  -moz-box-orient: vertical;
+  display: -moz-inline-stack;
   display: inline-block;
   vertical-align: middle;
   *vertical-align: auto;
-}
-.main article .category ul {
+  zoom: 1;
   *display: inline;
 }
 .main article .category li {

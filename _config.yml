@@ -1,6 +1,1 @@
-auto:           false
-server:         false
-server_port:    4000
-baseurl:        /
-url:            http://localhost:4000
-exclude:        readme.md, config.rb, .sass-cache, start.sh, compile.sh, watch.sh
+exclude: readme.md, config.rb, .sass-cache, node_modules, npm-debug.log, grunt.js, newpost.sh
