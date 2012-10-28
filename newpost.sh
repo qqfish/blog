@@ -1,7 +1,7 @@
 #!/bin/sh
 
 DATE=`date +"%Y-%m-%d"`
-FILENAME="src/posts/$DATE-FIXME.html"
+FILENAME="src/_posts/$DATE-FIXME.html"
 
 echo '---
 layout: post

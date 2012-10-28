@@ -1,65 +1,60 @@
 module.exports = function(grunt) {
 
+    // Imports
+    grunt.loadNpmTasks('grunt-jekyll');
+    grunt.loadNpmTasks('grunt-compass');
+    grunt.loadNpmTasks('grunt-contrib-watch');
+
 	// Project configuration.
 	grunt.initConfig({
 
 		jekyll: {
 			server : {
 				src : '.',
-				dest: '_site',
+				dest: 'build',
 				server : true,
 				server_port : 8000,
-				auto : true
+				auto : false
 			},
-			dev: {
-				src: '.',
-				dest: '_site'
-			},
-			prod: {
-				src: '.',
-				dest: '_site'
+			build: {
+				src: 'src',
+				dest: 'build'
 			}
 		},
 
 		compass: {
-		    dev: {
-		        src: '_sass',
-		        dest: '_site/css',
-		        linecomments: true,
-		        debugsass: true,
-		        //images: '/path/to/images',
-		        relativeassets: true
-		    },
-		    prod: {
-		        src: '_sass',
-		        dest: '_site/css',
-		        outputstyle: 'compressed',
-		        linecomments: false,
-		        forcecompile: true,
-		        debugsass: false,
-		        //images: '/path/to/images',
-		        relativeassets: true
-		    }
+            dev: {
+                src: 'src/_styles',
+                dest: 'build/css',
+                linecomments: true,
+                debugsass: true,
+                relativeassets: true
+            },
+            prod: {
+                src: 'src/_styles',
+                dest: 'build/css',
+                outputstyle: 'compressed',
+                linecomments: false,
+                forcecompile: true,
+                debugsass: false,
+                relativeassets: true
+            }
 		},
 
 		watch: {
 			compass: {
-				files: ['_sass/*.scss'],
+				files: ['src/styles/**/*.scss'],
 				tasks: ['compass:dev']
 			},
 			jekyll: {
-				files: ['*.html'],
-				tasks: ['jekyll:dev']
+				files: ['src/**/*.html', 'src/img/**/*', 'src/fonts/**/*', 'src/js/**/*.js'],
+				tasks: ['jekyll:build']
 			}
 		}
 	});
 
 	// Default task. Run standard jekyll server.
 	grunt.registerTask('default', 'jekyll:server');
-	grunt.registerTask('dev', 'compass:dev jekyll:dev');
-	grunt.registerTask('prod', 'compass:prod jekyll:prod');
-
-	// plugin tasks
-	grunt.loadNpmTasks('grunt-jekyll');
-	grunt.loadNpmTasks('grunt-compass');
+	grunt.registerTask('dev', 'jekyll:build compass:dev');
+	grunt.registerTask('prod', 'jekyll:build compass:prod');
 };
