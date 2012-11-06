@@ -54,7 +54,7 @@ module.exports = function(grunt) {
 	});
 
 	// Default task. Run standard jekyll server.
-	grunt.registerTask('default', 'jekyll:server');
+	grunt.registerTask('default', 'prod');
 	grunt.registerTask('dev', 'jekyll:build compass:dev');
 	grunt.registerTask('prod', 'jekyll:build compass:prod');
 };
