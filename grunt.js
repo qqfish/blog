@@ -4,6 +4,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-jekyll');
     grunt.loadNpmTasks('grunt-compass');
     grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-shell');
 
 	// Project configuration.
 	grunt.initConfig({
@@ -54,7 +55,7 @@ module.exports = function(grunt) {
 	});
 
 	// Default task. Run standard jekyll server.
-	grunt.registerTask('default', 'jekyll:server');
+	grunt.registerTask('default', 'prod');
 	grunt.registerTask('dev', 'jekyll:build compass:dev');
 	grunt.registerTask('prod', 'jekyll:build compass:prod');
 };
