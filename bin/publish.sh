@@ -3,7 +3,9 @@ grunt
 read -p "Press [Enter] key to continue..."
 git commit -am "Source updated"
 read -p "Press [Enter] key to continue..."
-git checkout gh-pages
+git branch -D gh-pages
+read -p "Press [Enter] key to continue..."
+git checkout -b gh-pages
 read -p "Press [Enter] key to continue..."
 mv .gitignore .gitignore.tmp
 read -p "Press [Enter] key to continue..."
