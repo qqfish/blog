@@ -19,7 +19,7 @@ git add .
 read -p "Press [Enter] key to continue..."
 git rm .gitignore
 read -p "Press [Enter] key to continue..."
-git commit -m "Updated\!"
+git commit -m "Site updated"
 read -p "Press [Enter] key to continue..."
 git push -f
 read -p "Press [Enter] key to continue..."
