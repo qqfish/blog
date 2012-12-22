@@ -1,0 +1,98 @@
+article {
+    position: relative;
+    padding-left: 80px;
+
+    h2 {
+        border-bottom: 1px solid #DDDDDD;
+        padding-bottom: 8px;
+    }
+
+    .date {
+        position: absolute;
+        top: 0;
+        left: 0;
+        text-align: center;
+
+        .decoration {
+            width: 50px;
+            height: 50px;
+            @include border-radius(25px);
+            font-size: 11px;
+            background: #9C7BA6;
+            color: white;
+            line-height: 14px;
+        }
+
+        .day,
+        .month,
+        .year,
+        .decoration {
+            display: block;
+        }
+
+        .month {
+            padding-top: 8px;
+        }
+
+        .day {
+            font-size: 20px;
+            font-weight: bold;
+            line-height: 18px;
+        }
+
+        .year {
+            font-weight: bold;
+            font-size: 18px;
+            margin-top: 8px;
+            color: #5D5D5D;
+        }
+    }
+
+    .author,
+    .category {
+        color: #CDCDCD;
+        @include inline-block();
+        padding-left: 26px;
+        @extend %icon;
+
+        &:before {
+            font-size: 40px;
+            margin-right: 4px;
+            top: -8px;
+        }
+    }
+
+    .author {
+        @extend .icon-user;
+    }
+
+    .category {
+        @extend .icon-tag;
+        margin-left: 15px;
+
+        ul {
+            @include clearfix();
+            @include inline-block();
+        }
+
+        li {
+            float: left;
+
+            &:not(:last-child):after {
+                content: ',';
+                margin-right: 3px;
+            }
+        }
+    }
+
+    .content {
+        margin-top: 20px;
+
+        a {
+            background: #F3F3F3;
+            @include border-radius(4px);
+            padding: 0px 4px;
+            font-weight: bold;
+        }
+    }
+}

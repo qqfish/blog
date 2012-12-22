@@ -1,0 +1,44 @@
+aside {
+    font-family: "FuturaStdBook", Arial, sans-serif;
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: 0.1em;
+    width: $aside-width;
+    position: fixed;
+    top: $global-space;
+    left: $global-space;
+
+    nav {
+        background: #030303;
+        @include border-radius($global-radius);
+        padding: 40px $global-padding;
+        text-align: center;
+
+        ul {
+
+                &:before {
+                content: '▲';
+                color: white;
+                font-size: 18px;
+                display: block;
+                padding-bottom: 25px;
+            }
+        }
+
+        li {
+            margin-bottom: 5px;
+
+            &:nth-child(2):after {
+                content: '_';
+                display: block;
+                color: #666666;
+                margin-bottom: 15px;
+                margin-top: 1px;
+            }
+        }
+
+        a {
+            color: white;
+        }
+    }
+}
