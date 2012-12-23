@@ -10,5 +10,5 @@ cp -r build/ .
 git add .
 git rm .gitignore
 git commit -m "Site updated"
-git push -f
+git push -f --set-upstream origin gh-pages
 git checkout dev
