@@ -12,3 +12,4 @@ git rm .gitignore
 git commit -m "Site updated"
 git push -f --set-upstream origin gh-pages
 git checkout dev
+git push
