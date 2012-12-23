@@ -87,12 +87,5 @@ article {
 
     .content {
         margin-top: 20px;
-
-        a {
-            background: #F3F3F3;
-            @include border-radius(4px);
-            padding: 0px 4px;
-            font-weight: bold;
-        }
     }
 }
