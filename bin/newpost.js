@@ -24,11 +24,11 @@ rl.question('What is your post? ', function(answer) {
 '---',
 'layout: post',
 'title: "' + postName + '"',
-'tags: [\'\']',
+'tags: [\'removemeifunneeded\']',
 '---'
     ].join('\n');
 
-    Fs.writeFile(basePath + '_posts/' + currentDate + '-' + postName.toLowerCase().split(' ').join('-') + '.html', fileContent);
+    Fs.writeFile(basePath + '_posts/' + currentDate + '-' + postName.toLowerCase().split(' ').join('-') + '.md', fileContent);
 
     rl.close();
 });

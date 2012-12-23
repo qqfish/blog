@@ -17,17 +17,18 @@ module.exports = function(grunt) {
 
 		jekyll: {
 			server : {
-				src : 'src',
-				dest: 'build',
-				server : true,
-				server_port : 8000,
-				auto : false,
-                baseurl : '/blog'
+				src:            'src',
+				dest:           'build',
+				server:         true,
+				server_port:    8000,
+				auto:           false,
+                baseurl:        '/blog'
 			},
 			build: {
-				src: 'src',
-				dest: 'build',
-                baseurl : '/blog'
+				src:            'src',
+				dest:           'build',
+                baseurl:        '/blog',
+                pygments:       true
 			}
 		},
 
