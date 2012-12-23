@@ -1,5 +1,6 @@
 #!/bin/sh
 grunt
+git add .
 git commit -am "Source updated"
 git branch -D gh-pages
 git checkout -b gh-pages
