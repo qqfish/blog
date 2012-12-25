@@ -78,3 +78,90 @@ a:hover {
 @import "_aside";
 @import "_main";
 @import "_article";
+
+@media screen and (max-width: 640px) {
+    body {
+        padding: 5px;
+    }
+
+    aside {
+        position: static;
+        top: auto;
+        left: auto;
+        width: auto;
+        font-size: 11px;
+
+        nav {
+            padding: 10px;
+
+            ul {
+                @include clearfix();
+                @include inline-block();
+
+                &:before {
+                    padding-bottom: 5px;
+                }
+
+                li {
+                    float: left;
+                    margin-left: 5px;
+
+                    &:first-child {
+                        margin-left: 0px;
+                    }
+
+                    &:nth-child(2):after {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+
+    .main {
+        margin-top: 10px;
+        margin-left: 0px;
+        font-size: 0.9em;
+
+        .posts {
+            .time {
+                width: auto;
+            }
+
+            li {
+                margin-bottom: 10px;
+            }
+        }
+    }
+
+    article {
+        @include clearfix();
+        padding: 0px;
+
+        h1 {
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            margin-top: 0px;
+        }
+
+        .date {
+            position: static;
+            left: auto;
+            top: auto;
+            float: left;
+            margin: 0 5px 5px 0;
+        }
+
+        .category,
+        .author {
+            display: block;
+            margin-left: 55px;
+        }
+
+        .category {
+            margin-top: 10px;
+        }
+    }
+}
