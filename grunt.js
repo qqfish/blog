@@ -12,6 +12,7 @@ module.exports = function(grunt) {
 	grunt.initConfig({
 
         clean: {
+            build: 'build/',
             svg: 'build/svg'
         },
 
@@ -83,7 +84,7 @@ module.exports = function(grunt) {
 
 	// Default task. Run standard jekyll server.
 	grunt.registerTask('default', 'prod');
-	grunt.registerTask('dev', 'jekyll:build svgo:optimise shell:fontcustom clean:svg compass:dev');
-    grunt.registerTask('prod', 'jekyll:build svgo:optimise shell:fontcustom clean:svg compass:prod');
+	grunt.registerTask('dev', 'clean:build jekyll:build svgo:optimise shell:fontcustom clean:svg compass:dev');
+    grunt.registerTask('prod', 'clean:build jekyll:build svgo:optimise shell:fontcustom clean:svg compass:prod');
 	grunt.registerTask('server', 'jekyll:server');
 };
