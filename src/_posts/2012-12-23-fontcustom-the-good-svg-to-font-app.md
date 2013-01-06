@@ -88,4 +88,6 @@ On __Linux__, a bit more complex:
 
 On __Debian__ (and so Ubuntu too), may prefer first ``` $ sudo apt-get install ruby1.*.*-dev. ```
 
+Plus, if you want to install ttfautohint via apt, just add the right repo in your ``` /etc/apt/sources.list ``` with this line: ``` deb http://ubuntu.mirror.cambrium.nl/ubuntu/ raring main universe ```. Don't forget to do ``` $ sudo apt-get update ``` before installing it.
+
 Enjoy.
