@@ -6,7 +6,7 @@ tags: ['css', 'sass']
 
 Last time, I wanted to create some sprites for high definition displays. Indeed, SVG or/and fonts are great to display icons but you can't do so many things with it. You're mostly limited by a ```text-shadow``` or some few effects, but you can't really do whatever you want and browser / operating systems don't render them equally.
 
-So here's my trick to create a sprite with compass to high definition displays.
+So here's my trick to create a sprite with compass to high definition displays. Your images have to be x2 higher of the size they'll really be once on the high definition display.
 
 {{% highlight css }}
     /* Put this file in your assets/stylesheets/ folder
