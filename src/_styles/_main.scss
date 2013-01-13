@@ -1,9 +1,10 @@
 .main {
     @include border-radius($global-radius);
     background: white;
-    margin-left: ($aside-width + $global-space);
     padding: $global-padding;
     color: #5D5D5D;
+    max-width: 700px;
+    margin: auto;
 
     a {
         color: #23ABCB;

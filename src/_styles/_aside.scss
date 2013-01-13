@@ -6,7 +6,8 @@ aside {
     width: $aside-width;
     position: fixed;
     top: $global-space;
-    left: $global-space;
+    margin-left: -490px;
+    left: 50%;
 
     nav {
         background: #030303;

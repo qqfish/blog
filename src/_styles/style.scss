@@ -79,7 +79,7 @@ a:hover {
 @import "_main";
 @import "_article";
 
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 1000px) {
     body {
         padding: 5px;
     }
@@ -90,6 +90,7 @@ a:hover {
         left: auto;
         width: auto;
         font-size: 11px;
+        margin-left: 0px;
 
         nav {
             padding: 10px;
@@ -122,6 +123,7 @@ a:hover {
         margin-top: 10px;
         margin-left: 0px;
         font-size: 0.9em;
+        max-width: 1000px;
 
         .posts {
             .time {
