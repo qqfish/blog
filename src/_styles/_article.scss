@@ -54,11 +54,13 @@ article {
         @include inline-block();
         padding-left: 26px;
         @extend %icon;
+        position: relative;
 
         &:before {
+            position: absolute;
+            top: 0px;
+            left: 0px;
             font-size: 40px;
-            margin-right: 4px;
-            top: -8px;
         }
     }
 
