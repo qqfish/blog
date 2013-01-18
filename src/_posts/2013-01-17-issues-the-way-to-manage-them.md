@@ -55,15 +55,7 @@ You can filter your tickets by assignment, labels. You can see your milestones, 
 
 To work with github, [huboard](http://huboard.com/) asks some low permissions like - to be honest - almost all permissions. Yes, I see you to be afraid but let me explain how it works.
 
-It has no database, it just asks you permissions and the only things it does are to add some labels (Backlog, Ready, ...) to know the life of the issues and to add a comment like
-
-```
-<!---
- @huboard:{"order":42.6875}
-    -->
-```
-
-to know the priority (verticale way so).
+It has no database, it just asks you permissions and the only things it does are to add some labels (Backlog, Ready, ...) to know the life of the issues and to add a comment like ```<!--- @huboard:{"order":42.6875}    -->``` to know the priority (verticale way so).
 
 If you don't trust the online version (and I can understand you, it was my first reaction) well, let's have a try to the local version. Yes, because you can install your [huboard](http://huboard.com/) instanciation. Just [follow the commander](https://github.com/rauhryan/huboard#to-run-locally).
 
