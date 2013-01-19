@@ -16,12 +16,12 @@ I'm not new in development and managing a bug or an issue is probably one of the
 
 I've tried all of these bugtrackers for a few months like:
 
-* § [trac](http://trac.edgewall.org/)
-* § [bugzilla](http://www.bugzilla.org/)
-* § [jira](http://www.atlassian.com/software/jira/)
-* § [redmine](http://www.redmine.org/)
-* § a shared google spreadsheet (aye, not fundamentally a bad idea in a small team)
-* § some others I don't remember the name
+* [trac](http://trac.edgewall.org/)
+* [bugzilla](http://www.bugzilla.org/)
+* [jira](http://www.atlassian.com/software/jira/)
+* [redmine](http://www.redmine.org/)
+* [a shared google spreadsheet](https://drive.google.com) (aye, not fundamentally a bad idea in a small team)
+* some others I don't remember the name
 
 Well, and I can say no one satisfied me because I spent more time to try to use it correctly and to respect a process that it wasn't mine. I felt like inflexible and can't write down quickly a note or a bug.
 
