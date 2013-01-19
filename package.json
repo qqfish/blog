@@ -8,7 +8,8 @@
     "lodash": "~0.8.2",
     "grunt-shell": "~0.1.4",
     "grunt-contrib-clean": "~0.3.1",
-    "svgo-grunt": "0.0.2"
+    "svgo-grunt": "0.0.2",
+    "grunt-img": "~0.1.4"
   },
   "devDependencies": {},
   "repository": {

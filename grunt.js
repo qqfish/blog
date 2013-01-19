@@ -7,6 +7,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-shell');
     grunt.loadNpmTasks('svgo-grunt');
     grunt.loadNpmTasks('grunt-contrib-clean');
+    grunt.loadNpmTasks('grunt-img');
 
 	// Project configuration.
 	grunt.initConfig({
@@ -32,6 +33,15 @@ module.exports = function(grunt) {
                 pygments:       true
 			}
 		},
+
+        img: {
+            img: {
+                src: 'build/img'
+            },
+            content: {
+                src: 'build/content/img'
+            }
+        },
 
         svgo: {
             optimise: {
@@ -85,6 +95,6 @@ module.exports = function(grunt) {
 	// Default task. Run standard jekyll server.
 	grunt.registerTask('default', 'prod');
 	grunt.registerTask('dev', 'clean:build jekyll:build svgo:optimise shell:fontcustom clean:svg compass:dev');
-    grunt.registerTask('prod', 'clean:build jekyll:build svgo:optimise shell:fontcustom clean:svg compass:prod');
+    grunt.registerTask('prod', 'clean:build jekyll:build svgo:optimise img:img img:content shell:fontcustom clean:svg compass:prod');
 	grunt.registerTask('server', 'jekyll:server');
 };
