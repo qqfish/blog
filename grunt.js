@@ -34,6 +34,23 @@ module.exports = function(grunt) {
 			}
 		},
 
+        concat: {
+            build: {
+                src: [
+                    'src/_js/components/jquery/jquery.js',
+                    'src/_js/app.js'
+                ],
+                dest: 'build/js/app.js'
+            }
+        },
+
+        min: {
+            build: {
+                src: ['build/js/app.js'],
+                dest: 'build/js/app.js'
+            }
+        },
+
         img: {
             src: {
                 src: ['src/img/*', 'src/content/img/*']
@@ -91,7 +108,7 @@ module.exports = function(grunt) {
 
 	// Default task. Run standard jekyll server.
 	grunt.registerTask('default', 'prod');
-	grunt.registerTask('dev', 'clean:build jekyll:build svgo:optimise shell:fontcustom clean:svg compass:dev');
-    grunt.registerTask('prod', 'clean:build img:src jekyll:build svgo:optimise shell:fontcustom clean:svg compass:prod');
+    grunt.registerTask('prod', 'clean:build img:src jekyll:build concat:build min:build svgo:optimise shell:fontcustom clean:svg compass:prod');
+    grunt.registerTask('dev', 'clean:build jekyll:build concat:build shell:fontcustom clean:svg compass:dev');
 	grunt.registerTask('server', 'jekyll:server');
 };
