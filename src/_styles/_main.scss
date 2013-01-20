@@ -28,8 +28,8 @@
             text-align: right;
             margin-right: 10px;
             @include inline-block();
-            //background: #339BB9;
-            //color: white;
+            font-size: 0.8em;
+            vertical-align: text-bottom;
         }
 
         .title {

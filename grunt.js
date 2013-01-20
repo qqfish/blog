@@ -35,11 +35,8 @@ module.exports = function(grunt) {
 		},
 
         img: {
-            img: {
-                src: 'build/img'
-            },
-            content: {
-                src: 'build/content/img'
+            src: {
+                src: ['src/img/*', 'src/content/img/*']
             }
         },
 
@@ -95,6 +92,6 @@ module.exports = function(grunt) {
 	// Default task. Run standard jekyll server.
 	grunt.registerTask('default', 'prod');
 	grunt.registerTask('dev', 'clean:build jekyll:build svgo:optimise shell:fontcustom clean:svg compass:dev');
-    grunt.registerTask('prod', 'clean:build jekyll:build svgo:optimise img:img img:content shell:fontcustom clean:svg compass:prod');
+    grunt.registerTask('prod', 'clean:build img:src jekyll:build svgo:optimise shell:fontcustom clean:svg compass:prod');
 	grunt.registerTask('server', 'jekyll:server');
 };
