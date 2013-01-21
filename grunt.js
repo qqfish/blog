@@ -57,12 +57,6 @@ module.exports = function(grunt) {
             }
         },
 
-        svgo: {
-            optimise: {
-                files: 'build/svg/*.svg'
-            }
-        },
-
         shell: {
             fontcustom: {
                 command: 'bin/fontcustom.sh',
