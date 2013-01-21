@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Submarine: When the subtitles come to you"
+title: "Submarine: When subtitles come to you"
 tags: ['subtitle', 'tool']
 ---
 
