@@ -34,3 +34,8 @@ It will search all french subtitles for every avi file. Isn't it great? No stupi
     Powered by:
       OpenSubtitles (http://www.opensubtitles.org)
       Podnapisi (http://www.podnapisi.net/)
+
+
+### Alternative
+
+There's an alternative written in Python that I didn't try yet called [Periscope](https://github.com/patrickdessalle/periscope/).
