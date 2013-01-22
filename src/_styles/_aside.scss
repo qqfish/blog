@@ -29,7 +29,8 @@ aside {
         li {
             margin-bottom: 5px;
 
-            &:nth-child(2):after {
+            //&:nth-child(2):after {
+            &:nth-child(1):after {
                 content: '_';
                 display: block;
                 color: #666666;

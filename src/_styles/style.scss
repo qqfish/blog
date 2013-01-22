@@ -21,10 +21,15 @@ $global-padding: 15px;
 $aside-width: 100px;
 $active-link-colour: #03A976;
 
+html {
+    background: url(../img/forest.png) no-repeat center center fixed;
+    background-size: cover;
+    font-family: "FuturaStdBook",Arial,sans-serif;
+}
 
 html,
 body {
-	background: #F0F2F6;
+	//background: #F0F2F6;
 }
 
 body {
@@ -80,6 +85,10 @@ a:hover {
 @import "_article";
 
 @media screen and (max-width: 1000px) {
+    html {
+        background: #BEBBB8;
+    }
+
     body {
         padding: 5px;
     }
@@ -125,9 +134,26 @@ a:hover {
         font-size: 0.9em;
         max-width: 1000px;
 
+        h1 {
+            font-size: 1.3em;
+        }
+
         .posts {
             .time {
                 width: auto;
+            }
+
+            .title {
+                display: block;
+
+                &:before {
+                    content:"↳";
+                    margin-right: 5px;
+                    @include inline-block();
+                    font-size: 1.5em;
+                    line-height: 0.7em;
+                    vertical-align: baseline;
+                }
             }
 
             li {
@@ -137,7 +163,6 @@ a:hover {
     }
 
     article {
-        @include clearfix();
         padding: 0px;
 
         h1 {
@@ -153,17 +178,25 @@ a:hover {
             left: auto;
             top: auto;
             float: left;
-            margin: 0 5px 5px 0;
+            margin: 0 10px 10px 0;
         }
 
         .category,
         .author {
             display: block;
-            margin-left: 55px;
+            margin-left: 70px;
         }
 
         .category {
             margin-top: 10px;
+        }
+
+        .content {
+            clear: both;
+
+            img {
+                @include box-shadow(none);
+            }
         }
     }
 }
