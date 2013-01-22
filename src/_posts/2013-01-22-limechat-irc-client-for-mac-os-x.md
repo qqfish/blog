@@ -14,6 +14,7 @@ Anyway, as any activities on Internet, you must have the best tool to do it. Abo
 
 - [Official LimeChat Website](http://limechat.net/mac/)
 - [LimeChat Github Repository](https://github.com/psychs/limechat)
+- [LimeChat on Twitter](https://twitter.com/LimeChat)
 
 ### Bonus for Windows fella
 
