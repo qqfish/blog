@@ -10,6 +10,8 @@ Anyway, as any activities on Internet, you must have the best tool to do it. Abo
 
 [LimeChat](https://github.com/psychs/limechat) is an open source [IRC](http://en.wikipedia.org/wiki/Internet_Relay_Chat) client for Mac OS X which gives you everything you need. Plus I know you love themes, themes are available and done in CSS. Yep.
 
+![LimeChat]({{site.baseurl}}/content/img/limechat.jpg)
+
 - [Official LimeChat Website](http://limechat.net/mac/)
 - [LimeChat Github Repository](https://github.com/psychs/limechat)
 
