@@ -120,7 +120,7 @@ a:hover {
                         margin-left: 0px;
                     }
 
-                    &:nth-child(2):after {
+                    &:nth-child(1):after {
                         display: none;
                     }
                 }
@@ -131,7 +131,7 @@ a:hover {
     .main {
         margin-top: 10px;
         margin-left: 0px;
-        font-size: 0.9em;
+        font-size: 1em;
         max-width: 1000px;
 
         h1 {
@@ -150,7 +150,7 @@ a:hover {
                     content:"↳";
                     margin-right: 5px;
                     @include inline-block();
-                    font-size: 1.5em;
+                    font-size: 1.2em;
                     line-height: 0.7em;
                     vertical-align: baseline;
                 }
