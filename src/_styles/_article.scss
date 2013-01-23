@@ -76,6 +76,7 @@ article {
         ul {
             @include clearfix();
             @include inline-block();
+            vertical-align: top;
         }
 
         li {
