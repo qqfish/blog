@@ -18,7 +18,7 @@ Just to be clear: an ```id_rsa``` is a __private__ key containing the protocol v
 
 The ```id_rsa.pub``` file contains the protocol version 2 RSA public key for authentication. It's the file on the server who says to this same server "Yeah, I accept this kind of person" (kind which is defined by your private key).
 
-__So. Do. Not. Ever. Share. Your private key.__
+So. __Do. Not. Ever. Share. Your private key.__
 
 And about public key, only on server you would like to connect to. On [Github](https://www.github.com), it's there: [github.com/settings/ssh](https://github.com/settings/ssh).
 
