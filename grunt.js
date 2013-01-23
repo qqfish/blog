@@ -4,9 +4,10 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-jekyll');
     grunt.loadNpmTasks('grunt-compass');
     grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-contrib-clean');
+    grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-shell');
     grunt.loadNpmTasks('svgo-grunt');
-    grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-img');
 
 	// Project configuration.
@@ -14,7 +15,15 @@ module.exports = function(grunt) {
 
         clean: {
             build: 'build/',
-            svg: 'build/svg'
+            svg: 'build/img/svg'
+        },
+
+        copy: {
+            assets: {
+                files: {
+                    'build/': 'src/_assets/**'
+                }
+            }
         },
 
 		jekyll: {
@@ -53,7 +62,7 @@ module.exports = function(grunt) {
 
         img: {
             src: {
-                src: ['src/img/*', 'src/content/img/*']
+                src: ['src/_assets/img/*', 'src/_assets/content/img/*']
             }
         },
 
@@ -102,7 +111,7 @@ module.exports = function(grunt) {
 
 	// Default task. Run standard jekyll server.
 	grunt.registerTask('default', 'prod');
-    grunt.registerTask('prod', 'clean:build img:src jekyll:build concat:build min:build shell:fontcustom clean:svg compass:prod');
-    grunt.registerTask('dev', 'clean:build jekyll:build concat:build shell:fontcustom clean:svg compass:dev');
+    grunt.registerTask('prod', 'clean:build img:src jekyll:build copy:assets concat:build min:build shell:fontcustom clean:svg compass:prod');
+    grunt.registerTask('dev', 'clean:build jekyll:build copy:assets concat:build shell:fontcustom clean:svg compass:dev');
 	grunt.registerTask('server', 'jekyll:server');
 };
