@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "id_rsa and id_dsa on Github or more known as WTF YOU CRAZY FELLA"
+title: "id_rsa and id_dsa on Github or better known as WTF YOU CRAZY FELLA"
 tags: ['github', 'security']
 ---
 
