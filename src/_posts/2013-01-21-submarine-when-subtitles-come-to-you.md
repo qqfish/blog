@@ -41,6 +41,8 @@ It will search all french subtitles for every avi file. Isn't it great? No stupi
       Podnapisi (http://www.podnapisi.net/)
 
 
-### Alternative
+### Alternatives
 
 There's an alternative written in Python that I didn't try yet called [Periscope](https://github.com/patrickdessalle/periscope/).
+
+Another one called [Subliminal](https://github.com/Diaoul/subliminal) but for some reasons (installation, manipulation, interface), I prefer [Submarine](https://github.com/blazt/submarine).
