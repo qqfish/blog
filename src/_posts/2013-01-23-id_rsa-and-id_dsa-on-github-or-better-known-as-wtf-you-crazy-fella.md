@@ -7,7 +7,9 @@ tags: ['github', 'security']
 This evening, I was quietly seated on my chair, doing some geek stuff... when came a tweet from nowhere:
 
 
-    Enjoy! https://github.com/search?p=2&q=path%3A.ssh%2Fid_rsa
+    Enjoy! https://github.com/search?q=XXXX (1)
+
+_(I have deliberately broken the link not to help people who want to do bad things with information)_
 
 
 ![LimeChat]({{site.baseurl}}/content/img/github-fail.jpg)
