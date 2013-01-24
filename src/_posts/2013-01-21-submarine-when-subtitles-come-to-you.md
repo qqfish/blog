@@ -16,10 +16,8 @@ It will search all french subtitles for every avi file. Isn't it great? No stupi
 
 ### Quick install with Homebrew
 
-```
-$ brew tap orpiske/alt
-$ brew install submarine
-```
+    $ brew tap orpiske/alt
+    $ brew install submarine
 
 ### Man
 
