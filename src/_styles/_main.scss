@@ -23,6 +23,24 @@
     }
 
     .posts {
+        @extend %icon-container;
+        padding-bottom: 60px;
+
+        &:after {
+            @extend %icon;
+            @extend .icon-fir-tree:before;
+            top: auto;
+            bottom: 0;
+            left: 50%;
+            font-size: 22px;
+            width: 22px;
+            margin-left: -11px;
+            text-align: center;
+            color: #6E6D6B;
+        }
+    }
+
+    .posts-list {
         .time {
             width: 110px;
             text-align: right;

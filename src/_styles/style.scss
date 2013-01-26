@@ -66,18 +66,18 @@ a:hover {
 	text-decoration: underline;
 }
 
-%icon {
+%icon-container {
     position: relative;
+}
 
-    &:before {
-        font-family: "fontcustom";
-        font-weight: normal;
-        font-style: normal;
-        text-decoration: inherit;
-        position: absolute;
-        top: 0;
-        left: 0;
-    }
+%icon {
+    font-family: "fontcustom";
+    font-weight: normal;
+    font-style: normal;
+    text-decoration: inherit;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 @import "_aside";
