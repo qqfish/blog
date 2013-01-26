@@ -38,6 +38,11 @@
             text-align: center;
             color: #6E6D6B;
         }
+
+        &:hover:after {
+            -moz-animation:spin 1s infinite ease-in;
+            -webkit-animation:spin 1s infinite ease-in;
+        }
     }
 
     .posts-list {
@@ -54,4 +59,13 @@
             @include inline-block();
         }
     }
+}
+
+@-moz-keyframes spin {
+0% { -moz-transform:rotate(0deg); }
+100% { -moz-transform:rotate(360deg); }
+}
+@-webkit-keyframes spin {
+0% { -webkit-transform:rotate(0deg); }
+100% { -webkit-transform:rotate(360deg); }
 }
