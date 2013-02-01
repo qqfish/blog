@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Credentials with Zepto"
-tags: ['ajax', 'zepto']
+tags: ['ajax', 'zepto', 'cors']
 ---
 
 If you need to manage cookies on [CORS](http://www.html5rocks.com/en/tutorials/cors/) requests with [Zepto](http://zeptojs.com/) (yes, they do not manage [jQuery xhrFields](http://api.jquery.com/jQuery.ajax/) yet), just add this setting:
