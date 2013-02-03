@@ -26,6 +26,12 @@
         @extend %icon-container;
         padding-bottom: 60px;
 
+        .bonus-link {
+            &:hover {
+                text-transform: none;
+            }
+        }
+
         .fir-tree {
             @extend %icon;
             @extend .icon-fir-tree;
