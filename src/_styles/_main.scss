@@ -26,22 +26,25 @@
         @extend %icon-container;
         padding-bottom: 60px;
 
-        &:after {
+        .fir-tree {
             @extend %icon;
-            @extend .icon-fir-tree:before;
+            @extend .icon-fir-tree;
             top: auto;
             bottom: 0;
-            left: 50%;
+            left: 0;
             font-size: 22px;
-            width: 22px;
-            margin-left: -11px;
+            width: 100%;
+            height: 20px;
+            margin-top: -30px;
+            padding-top: 40px;
             text-align: center;
             color: #6E6D6B;
-        }
+            display: block;
 
-        &:hover:after {
-            -moz-animation:spin 1s infinite ease-in;
-            -webkit-animation:spin 1s infinite ease-in;
+            &:hover {
+                -moz-animation:russia 0.7s ease infinite;
+                -webkit-animation:russia 0.7s ease infinite;
+            }
         }
     }
 
@@ -61,11 +64,13 @@
     }
 }
 
-@-moz-keyframes spin {
-0% { -moz-transform:rotate(0deg); }
-100% { -moz-transform:rotate(360deg); }
+@-moz-keyframes russia {
+    0% {bottom: 0px;}
+    50%  {bottom: 10px;}
+    100%   {bottom: 0px;}
 }
-@-webkit-keyframes spin {
-0% { -webkit-transform:rotate(0deg); }
-100% { -webkit-transform:rotate(360deg); }
+@-webkit-keyframes russia {
+    0% {bottom: 0px;}
+    50%  {bottom: 10px;}
+    100%   {bottom: 0px;}
 }
