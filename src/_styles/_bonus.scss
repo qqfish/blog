@@ -1,0 +1,122 @@
+.bonus {
+    background: white;
+    -moz-animation:burn 0.5s infinite;
+    -webkit-animation:burn 0.5s infinite;
+
+    .fir-tree {
+        @extend %icon;
+        @extend .icon-fir-tree;
+        font-size: 300px;
+        top: 50%;
+        left: 50%;
+        width: 327px;
+        height: 327px;
+        text-align: center;
+        margin-left: -(327px / 2);
+        margin-top: -(327px / 2);
+        -moz-animation:burn-tree 1s infinite ease;
+        -webkit-animation:burn-tree 1s infinite ease;
+    }
+}
+
+@-moz-keyframes burn {
+    0% {
+        background: blue;
+    }
+
+    25% {
+        background: pink;
+    }
+
+    50% {
+        background: yellow;
+    }
+
+    75% {
+        background: purple;
+    }
+
+    100% {
+        background: black;
+    }
+}
+
+@-webkit-keyframes burn {
+    0% {
+        background: blue;
+    }
+
+    25% {
+        background: pink;
+    }
+
+    50% {
+        background: yellow;
+    }
+
+    75% {
+        background: purple;
+    }
+
+    100% {
+        background: black;
+    }
+}
+
+@-moz-keyframes burn-tree {
+    0% {
+        color: black;
+        top: 50%;
+        -moz-transform: rotate(0deg);
+    }
+
+    25% {
+        top: 25%;
+        color: red;
+    }
+
+    50% {
+        color: grey;
+        top: 50%;
+    }
+
+    75% {
+        top: 75%;
+        color: mediumseagreen;
+    }
+
+    100% {
+        color: white;
+        top: 50%;
+        -moz-transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes burn-tree {
+    0% {
+        color: black;
+        top: 50%;
+        -webkit-transform: rotate(0deg);
+    }
+
+    25% {
+        top: 25%;
+        color: red;
+    }
+
+    50% {
+        color: grey;
+        top: 50%;
+    }
+
+    75% {
+        top: 75%;
+        color: mediumseagreen;
+    }
+
+    100% {
+        color: white;
+        top: 50%;
+        -webkit-transform: rotate(360deg);
+    }
+}
