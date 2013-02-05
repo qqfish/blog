@@ -4,6 +4,20 @@
 @import "_components/_pygments";
 @import "_code";
 
+%icon-container {
+    position: relative;
+}
+
+%icon {
+    font-family: "fontcustom";
+    font-weight: normal;
+    font-style: normal;
+    text-decoration: inherit;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
 @font-face {
     font-family: 'FuturaStdBook';
     src: url('../fonts/futurastd-book-webfont.eot');
@@ -34,6 +48,18 @@ body {
 
 body {
 	padding: $global-space;
+
+    &:after {
+        @extend %icon;
+        @extend .icon-wolf:before;
+        position: fixed;
+        bottom: 5px;
+        right: 5px;
+        color: white;
+        left: auto;
+        top: auto;
+        font-size: 28px;
+    }
 }
 
 ul {
@@ -64,20 +90,6 @@ a.active {
 
 a:hover {
 	text-decoration: underline;
-}
-
-%icon-container {
-    position: relative;
-}
-
-%icon {
-    font-family: "fontcustom";
-    font-weight: normal;
-    font-style: normal;
-    text-decoration: inherit;
-    position: absolute;
-    top: 0;
-    left: 0;
 }
 
 @import "_aside";
