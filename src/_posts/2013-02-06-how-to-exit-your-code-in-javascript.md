@@ -4,7 +4,7 @@ title: "How to exit your code in JavaScript"
 tags: ['javascript', 'debug']
 ---
 
-There's no real exit function is javascript, and sometimes you need to break your code just after debugging something.
+There's no real exit function in JavaScript, and sometimes you need to break your code just after debugging something.
 
 To do that, you have two cases: when you are in a function, when you are in a loop.
 
