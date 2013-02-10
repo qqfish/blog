@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Issues, the way to manage them"
-tags: ['issues', 'github']
+tags: ['issues', 'github', 'huboard']
 ---
 
 ### Préambule
