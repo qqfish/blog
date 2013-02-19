@@ -18,7 +18,7 @@ Though, this code will affect every ajax request. Maybe you want it just for one
 $.ajax({
     url: src,
     dataType: 'json',
-    beforeSend: function(xhr) {
+    beforeSend: function(xhr) {
         xhr.withCredentials = false;
     },
     success: function (response) {
