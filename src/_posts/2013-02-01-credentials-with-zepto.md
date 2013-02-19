@@ -12,4 +12,19 @@ $.ajaxSettings.beforeSend = function(xhr) {
 };
 {% endhighlight %}
 
+Though, this code will affect every ajax request. Maybe you want it just for one request. In this case:
+
+{% highlight javascript %}
+$.ajax({
+    url: src,
+    dataType: 'json',
+    beforeSend: function(xhr) {
+        xhr.withCredentials = false;
+    },
+    success: function (response) {
+        callback(response);
+    }
+});
+{% endhighlight %}
+
 Hope they will implement it soon, PR are already in queue.
