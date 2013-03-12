@@ -15,17 +15,17 @@ Some samples there:
 
 * Explorer
 
-[![Explorer without gdipp]({{site.baseurl}}/content/img/gdipp_explorer_off.png)]({{site.baseurl}}/content/img/gdipp_explorer_off.png)
+[![Explorer without gdipp]({{site.baseurl}}/content/img/gdipp-explorer-off.png)]({{site.baseurl}}/content/img/gdipp-explorer-off.png)
 _Without gdipp_
 
-[![Explorer with gdipp]({{site.baseurl}}/content/img/gdipp_explorer_on.png)]({{site.baseurl}}/content/img/gdipp_explorer_on.png)
+[![Explorer with gdipp]({{site.baseurl}}/content/img/gdipp-explorer-on.png)]({{site.baseurl}}/content/img/gdipp-explorer-on.png)
 _With gdipp_
 
 
 * Sublime Text
 
-[![Sublime Text without gdipp]({{site.baseurl}}/content/img/gdipp_sublimetext_off.png)]({{site.baseurl}}/content/img/gdipp_sublimetext_off.png)
+[![Sublime Text without gdipp]({{site.baseurl}}/content/img/gdipp-sublimetext-off.png)]({{site.baseurl}}/content/img/gdipp-sublimetext-off.png)
 _Without gdipp_
 
-[![Sublime Text with gdipp]({{site.baseurl}}/content/img/gdipp_sublimetext_on.png)]({{site.baseurl}}/content/img/gdipp_sublimetext_on.png)
+[![Sublime Text with gdipp]({{site.baseurl}}/content/img/gdipp-sublimetext-on.png)]({{site.baseurl}}/content/img/gdipp-sublimetext-on.png)
 _With gdipp_
