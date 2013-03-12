@@ -8,4 +8,4 @@ tags: ['definition', 'developer']
 
 From a quote of [Christian Heilmann](http://christianheilmann.com) (in a [keynote](http://christianheilmann.com/2013/02/20/helping-or-hurting/) that wasn't really the main topic but) I wanted to keep in mind to explain this:
 
-Developers aren't coders. They are solvers and use code to do it.
+```Developers aren't coders. They are solvers and use code to do it.```
