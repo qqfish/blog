@@ -145,6 +145,7 @@ article {
         @include hyphens(auto);
         color: #535353;
         position: relative;
+        min-height: 80px;
 
         .pic {
             position: absolute;
