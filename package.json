@@ -1,28 +1,41 @@
 {
-  "name": "blog",
-  "version": "1.0.0",
-  "description": "bloggy blog",
-  "dependencies": {
-    "grunt-compass": "~0.3.7",
+  "name": "happy-plan",
+  "version": "0.2.0",
+  "description": "Happy plan is bundle of amazing tools to be used as a static website generator.",
+  "author": "Erwann Mest",
+  "license": "BSD",
+  "dependencies": {},
+  "devDependencies": {
+    "bower": "0.8",
+    "grunt": "~0.4.0",
+    "grunt-contrib-clean": "~0.4.0",
     "grunt-jekyll": "~0.2.2",
-    "lodash": "~0.8.2",
-    "grunt-shell": "~0.1.4",
-    "grunt-contrib-clean": "~0.3.1",
-    "svgo-grunt": "0.0.2",
-    "grunt-img": "~0.1.4",
-    "grunt-contrib-copy": "~0.3.2"
+    "grunt-contrib-copy": "0.4.0",
+    "grunt-contrib-concat": "~0.1.2",
+    "grunt-contrib-compass": "~0.1.2",
+    "grunt-contrib-uglify": "~0.1.1",
+    "grunt-contrib-imagemin": "~0.1.1",
+    "grunt-regarde": "0.1.1",
+    "grunt-contrib-livereload": "~0.1.1",
+    "grunt-contrib-jshint": "~0.2.0",
+    "grunt-shell": "~0.2.1"
   },
-  "devDependencies": {},
   "repository": {
     "type": "git",
-    "url": "git://github.com/kud/blog.git"
+    "url": "git://github.com/kud/happy-plan.git"
   },
   "keywords": [
-    "blog",
-    "kud",
+    "static",
+    "website",
+    "generator",
+    "jekyll",
     "frontend",
-    "web"
+    "grunt",
+    "gh-pages",
+    "bower"
   ],
-  "author": "Erwann MEST",
-  "license": "BSD"
+  "main": "Gruntfile.js",
+  "scripts": {
+    "test": "grunt test"
+  }
 }

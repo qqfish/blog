@@ -1,0 +1,44 @@
+{
+    "baseUrl": "/blog",
+    "src": {
+        "path": "src",
+        "assets": {
+            "path": "src/assets",
+            "scripts": "src/assets/scripts",
+            "styles": "src/assets/styles",
+            "images": "src/assets/images",
+            "static": "src/assets/static",
+            "fontcustom": "src/assets/svg-to-fonts"
+        },
+        "jekyll": {
+            "pages": "src/pages",
+            "posts": "src/layouts",
+            "partials": "src/partials",
+            "config": "src/config/config.yml"
+        },
+        "medias": "src/medias"
+    },
+    "dist": {
+        "path": "dist",
+        "assets": {
+            "path": "dist/assets",
+            "scripts": "dist/assets/js",
+            "styles": "dist/assets/css",
+            "images": "dist/assets/img",
+            "static": "dist/assets/",
+            "fontcustom": "dist/assets/fonts"
+        },
+        "medias": "dist/medias"
+    },
+    "grunt": {
+        "jshint": {
+            "files": [
+                "Gruntfile.js",
+                "package.json",
+                "happy-plan.json",
+                "<%= happyPlan.src.assets.scripts %>/**/*.js",
+                "!<%= happyPlan.src.assets.scripts %>/lib/**/*"
+            ]
+        }
+    }
+}
