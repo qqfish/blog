@@ -225,7 +225,7 @@ module.exports = function(grunt) {
     imagemin: {
       dist: {
         options: {
-          optimizationLevel: 7,
+          optimizationLevel: 3,
           progressive: true
         },
         files: [

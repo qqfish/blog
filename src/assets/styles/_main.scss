@@ -23,40 +23,45 @@
     }
 
     .posts {
-        @extend %icon-container;
-        padding-bottom: 60px;
+      font-family: 'Myriad Pro Regular', Arial, serif;
+      @extend %icon-container;
+      padding-bottom: 60px;
 
-        .bonus-link {
-            text-decoration: none;
-        }
+      h2 {
+        margin: 0;
+      }
 
-        .fir-tree {
-            @extend %icon;
-            @extend .icon-fir-tree;
-            top: auto;
-            bottom: 0;
-            left: 0;
-            font-size: 1.3em;
-            width: 100%;
-            height: 20px;
-            margin-top: -30px;
-            padding-top: 40px;
-            text-align: center;
-            color: #6E6D6B;
-            display: block;
+      .bonus-link {
+          text-decoration: none;
+      }
 
-            &:hover {
-                -moz-animation:russia 0.7s ease infinite;
-                -webkit-animation:russia 0.7s ease infinite;
-            }
-        }
+      .fir-tree {
+          @extend %icon;
+          @extend .icon-fir-tree;
+          top: auto;
+          bottom: 0;
+          left: 0;
+          font-size: 1.3em;
+          width: 100%;
+          height: 20px;
+          margin-top: -30px;
+          padding-top: 40px;
+          text-align: center;
+          color: #6E6D6B;
+          display: block;
+
+          &:hover {
+              -moz-animation:russia 0.7s ease infinite;
+              -webkit-animation:russia 0.7s ease infinite;
+          }
+      }
     }
 
     .posts-list {
       font-size: 1.1em;
 
         .time {
-            width: 110px;
+            width: 80px;
             text-align: right;
             margin-right: 10px;
             @include inline-block();

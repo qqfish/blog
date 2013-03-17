@@ -109,7 +109,6 @@ a:hover {
         top: auto;
         left: auto;
         width: auto;
-        font-size: 11px;
         margin-left: 0px;
 
         nav {
@@ -146,30 +145,36 @@ a:hover {
         max-width: 1000px;
 
         h1 {
-            font-size: 1.3em;
+          font-size: 1.3em;
         }
 
         .posts {
-            .time {
-                width: auto;
-            }
+          h2 {
+            font-size: 1.1em;
+            margin-bottom: 0;
+          }
 
-            .title {
-                display: block;
+          .time {
+            width: auto;
+          }
 
-                &:before {
-                    content:"↳";
-                    margin-right: 5px;
-                    @include inline-block();
-                    font-size: 1.2em;
-                    line-height: 0.7em;
-                    vertical-align: baseline;
-                }
-            }
+          .title {
+            display: block;
+            font-size: 0.9em;
 
-            li {
-                margin-bottom: 10px;
+            &:before {
+              content:"↳";
+              margin-right: 5px;
+              @include inline-block();
+              font-size: 1.2em;
+              line-height: 0.7em;
+              vertical-align: baseline;
             }
+          }
+
+          li {
+              margin-bottom: 10px;
+          }
         }
     }
 
@@ -182,6 +187,8 @@ a:hover {
 
         h2 {
             margin-top: 0px;
+            line-height: 1em;
+            padding-bottom: 5px;
         }
 
         .date {
@@ -204,6 +211,7 @@ a:hover {
 
         .content {
             clear: both;
+            margin-top: 50px;
 
             img {
                 @include box-shadow(none);
