@@ -1,1 +1,1 @@
-Powered by [happy plan](https://github.com/kud/happy-plan). :)
+My bloggy blog! Powered by [happy plan](http://github.kud.io/happy-plan).
