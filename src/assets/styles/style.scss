@@ -1,9 +1,10 @@
 @import "compass";
-@import "../components/normalize.scss/_normalize.scss";
-@import "_fontcustom";
-@import "_pygments";
-@import "_fonts";
-@import "_code";
+@import "../components/normalize.scss/normalize.scss";
+@import "fontcustom";
+@import "fonts";
+//@import "code";
+@import "pygments-theme-freshcut.scss";
+
 
 %icon-container {
     position: relative;
@@ -91,9 +92,9 @@ a:hover {
 	text-decoration: underline;
 }
 
-@import "_aside";
-@import "_main";
-@import "_article";
+@import "aside";
+@import "main";
+@import "article";
 
 @media screen and (max-width: 1000px) {
     html {
@@ -220,4 +221,4 @@ a:hover {
     }
 }
 
-@import "_bonus";
+@import "bonus";
