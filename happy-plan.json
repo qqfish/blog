@@ -1,7 +1,4 @@
 {
-  /*"dist": {
-    "path" : "dist/blog/"
-  },*/
   "baseUrl": "/blog",
   "jekyll": {
     "permalink": "/:year/:month/:day/:title"
