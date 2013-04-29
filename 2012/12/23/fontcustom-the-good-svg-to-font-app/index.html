@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="Manifest of a frontend dev.">
+        <meta name="keywords" content="dev,css,css3,html,html5,api,javascript,js,zepto,jquery,backbone,nodejs,node,frontend,front">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>_kud.blog -- Fontcustom, the good svg-to-font app</title>
+        <link rel="shortcut icon" type="image/png" href="/favicon.png" />
+        <link rel="stylesheet" type="text/css" href="/blog/assets/css/style.css">
+        <link href="/blog/feed.xml" rel="alternate" type="application/rss+xml">
+    </head>
+    <body>
+        <aside>
+            <nav>
+                <ul>
+                    <li><a href="/blog/" class="active">Blog</a></li>
+                    
+                    <li><a href="http://www.kud.fr">Profile</a></li>
+                    <li><a href="https://www.github.com/kud">Github</a></li>
+                    <li><a href="https://www.twitter.com/_kud">Twitter</a></li>
+                </ul>
+            </nav>
+        </aside>
+        <section class="main">
+            <h1><a href="/blog/">Manifest of a frontend dev</a></h1>
+            <article>
+	<h2>Fontcustom, the good svg-to-font app</h2>
+	<div class="date">
+        <span class="decoration">
+            <span class="month">Dec</span>
+            <span class="day">23</span>
+        </span>
+        <span class="year">2012</span>
+    </div>
+	<div class="author">By <a href="http://kud.io">Erwann Mest</a></div>
+    
+	<div class="category">
+		<ul>
+            
+                <li><a href="#">svg</a></li>
+            
+                <li><a href="#">fonts</a></li>
+            
+		</ul>
+	</div>
+    
+	<section class="content">
+		<p>Recently at work, I&#8217;ve created my first new web application for mobiles. It was the first time I had to deal with html and mobiles to create something like a native app.</p>
+
+<p>So as first step on mobile world, I did a lot of mistakes. If I tell you that, it&#8217;s because <a href='http://fontcustom.com/'>fontcustom</a> was the solution of one of these mistakes.</p>
+
+<p>Indeed, on a mobile, you can&#8217;t use regular images like on desktop, the resolution of the screen is like 2 times higher (See Retina from Apple for example) so a classic image will be really ugly. You can also use the trick (mostly in fallback) that you take a 2x image and reduce it via html/css in order to have something presentable (there&#8217;re lots of articles about it on internet like this <a href='http://www.toddmotto.com/mastering-svg-use-for-a-retina-web-fallbacks-with-png-script'>one</a>) but I wanted to try it in SVG. I think it&#8217;s really the format you should use when you create icons and you have differents resolutions. As it&#8217;s vectorial, you never have a degression of your image depending to how you manage its size.</p>
+
+<p>See there for instance, it&#8217;s an image where I zoom it like 4 times. At your left, you have a classic png image and at your right, you have a svg one.</p>
+
+<p><img alt='SVG vs PNG' src='/blog/medias/img/svg-vs-png.jpg' /></p>
+
+<p>The png one is sooo disgraceful contrary to the svg one.</p>
+
+<p>As I had all my icons in png (and sprite), it was time to try svg. But I really wanted to have the same performance that png in sprite where I have just one request to get all my icons. That&#8217;s why I choose to create a font especially for icons. This is where <a href='http://fontcustom.com/'>fontcustom</a> is my hero.</p>
+
+<p><a href='http://fontcustom.com/'>Fontcustom</a> based on fontforge allows you to create from a collection of svg a font where you will have all your icons in one file.</p>
+
+<p>Imagine you have:</p>
+
+<pre><code>svg/
+    - tag.svg
+    - user.svg
+    - cross.svg</code></pre>
+
+<p><a href='http://fontcustom.com/'>Fontcustom</a> will create so:</p>
+
+<pre><code>- fontcustom-*cachebuster*.eot
+- fontcustom-*cachebuster*.svg
+- fontcustom-*cachebuster*.tff
+- fontcustom-*cachebuster*.woff
+- fontcustom.css</code></pre>
+
+<p>In order to support all browsers, you will have the font in 4 files, plus a css to use it.</p>
+
+<p>So now, you can have lots of vectorial icons in just one request. To be honest, this blog uses it to display user icon and tag icon just under the article title.</p>
+
+<h3 id='usage'>Usage</h3>
+
+<p>In order to use, just do</p>
+
+<pre><code>&lt;span class=&quot;icon-user&quot;&gt;&lt;/span&gt;</code></pre>
+
+<p>You will get a great vectorial icon added via <code>icon-user:before</code>.</p>
+
+<p>If you use <a href='http://sass-lang.com/'>SASS</a> and like me you dislike to add useless classes in your html, I advise you to do this trick:</p>
+
+<p>You define a placeholder which will be used by any classes which require an icon.</p>
+<div class='highlight'><pre><code class='css'><span class='o'>%</span><span class='nt'>icon</span> <span class='p'>{</span>
+    <span class='o'>&amp;:</span><span class='n'>before</span> <span class='err'>{</span>
+        <span class='k'>font-family</span><span class='o'>:</span> <span class='s2'>&quot;fontcustom&quot;</span><span class='p'>;</span>
+        <span class='k'>font-weight</span><span class='o'>:</span> <span class='k'>normal</span><span class='p'>;</span>
+        <span class='k'>font-style</span><span class='o'>:</span> <span class='k'>normal</span><span class='p'>;</span>
+        <span class='k'>text-decoration</span><span class='o'>:</span> <span class='k'>inherit</span><span class='p'>;</span>
+    <span class='p'>}</span>
+<span class='err'>}</span>
+</code></pre></div>
+<p>And you extend your class by your placeholder, plus the class creates especially for the icon you add as svg.</p>
+<div class='highlight'><pre><code class='css'><span class='nc'>.author</span> <span class='p'>{</span>
+    <span class='o'>@</span><span class='n'>extend</span> <span class='o'>%</span><span class='k'>icon</span><span class='o'>,</span> <span class='o'>.</span><span class='k'>icon</span><span class='o'>-</span><span class='n'>user</span><span class='p'>;</span>
+<span class='p'>}</span>
+</code></pre></div>
+<p>Clean, fast, and beautiful.</p>
+
+<h3 id='installation'>Installation</h3>
+
+<p>Installation on <strong>MacOSX</strong> is really simple:</p>
+
+<pre><code>$ brew install fontforge eot-utils ttfautohint
+$ gem install fontcustom</code></pre>
+
+<p>On <strong>Linux</strong>, a bit more complex:</p>
+
+<pre><code>$ sudo apt-get install fontforge eot-utils ttfautohint
+$ wget http://people.mozilla.com/~jkew/woff/woff-code-latest.zip
+$ unzip woff-code-latest.zip -d sfnt2woff &amp;&amp; cd sfnt2woff &amp;&amp; make &amp;&amp; sudo mv sfnt2woff /usr/local/bin/
+$ gem install fontcustom</code></pre>
+
+<p>On <strong>Debian</strong> (and so Ubuntu too), may prefer first <code>$ sudo apt-get install ruby1.*.*-dev.</code></p>
+
+<p>Plus, if you want to install ttfautohint via apt, just add the right repo in your <code>/etc/apt/sources.list</code> with this line: <code>deb http://ubuntu.mirror.cambrium.nl/ubuntu/ raring main universe</code>. Don&#8217;t forget to do <code>$ sudo apt-get update</code> before installing it.</p>
+
+<p>Enjoy.</p>
+	</section>
+    <section class="report">
+        Any feedbacks, errors, typo, thanks, please contact me on twitter at <a href="https://www.twitter.com/_kud/">@_kud</a>.
+    </section>
+    <section class="about-author">
+        <img src="https://fr.gravatar.com/userimage/10327718/b7a61a57884f7e973154b1d737f8c380.jpeg" alt="" class="pic"> Erwann. Ex - back-end dev now front-end dev. Works at <a href="//www.playmedia.fr">playmedia</a>, company editing <a href="//www.playtv.fr">playtv.fr</a>. Also drummer, photographer, cinema lover and so on. Need <a href="//www.kud.fr">mooaar</a>?
+    </section>
+</article>
+        </section>
+        
+        <script type="text/javascript">
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-25156890-3']);
+            _gaq.push(['_trackPageview']);
+
+            (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+        </script>
+    </body>
+</html>

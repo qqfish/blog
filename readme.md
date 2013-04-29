@@ -1,1 +1,0 @@
-My bloggy blog! Powered by [happy plan](http://github.kud.io/happy-plan).

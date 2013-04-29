@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="Manifest of a frontend dev.">
+        <meta name="keywords" content="dev,css,css3,html,html5,api,javascript,js,zepto,jquery,backbone,nodejs,node,frontend,front">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>_kud.blog -- Issues, the way to manage them</title>
+        <link rel="shortcut icon" type="image/png" href="/favicon.png" />
+        <link rel="stylesheet" type="text/css" href="/blog/assets/css/style.css">
+        <link href="/blog/feed.xml" rel="alternate" type="application/rss+xml">
+    </head>
+    <body>
+        <aside>
+            <nav>
+                <ul>
+                    <li><a href="/blog/" class="active">Blog</a></li>
+                    
+                    <li><a href="http://www.kud.fr">Profile</a></li>
+                    <li><a href="https://www.github.com/kud">Github</a></li>
+                    <li><a href="https://www.twitter.com/_kud">Twitter</a></li>
+                </ul>
+            </nav>
+        </aside>
+        <section class="main">
+            <h1><a href="/blog/">Manifest of a frontend dev</a></h1>
+            <article>
+	<h2>Issues, the way to manage them</h2>
+	<div class="date">
+        <span class="decoration">
+            <span class="month">Jan</span>
+            <span class="day">17</span>
+        </span>
+        <span class="year">2013</span>
+    </div>
+	<div class="author">By <a href="http://kud.io">Erwann Mest</a></div>
+    
+	<div class="category">
+		<ul>
+            
+                <li><a href="#">issues</a></li>
+            
+                <li><a href="#">github</a></li>
+            
+                <li><a href="#">huboard</a></li>
+            
+		</ul>
+	</div>
+    
+	<section class="content">
+		<h3 id='prambule'>Préambule</h3>
+
+<p>First of all, a little notice to tell you that what I&#8217;ll be talking here is two parts mixed in one: it contains a way to write down an issue (bugtracking) &amp;&amp; a way to manage it (process in team). It&#8217;s two different things but I assume you already know what is what and I don&#8217;t want to spend time about it, there&#8217;re so many articles on the internet.</p>
+
+<p>So, I won&#8217;t talk to you about what <a href='http://en.wikipedia.org/wiki/Scrum_%28development%29'>scrum</a> is, what a <a href='http://en.wikipedia.org/wiki/Bugtracker'>bugtracker</a> is. I will talk to you about a tool which allows me to perfectly care my issues in team.</p>
+
+<h3 id='lets_go'>Let&#8217;s go</h3>
+
+<p>I&#8217;m not new in development and managing a bug or an issue is probably one of the hugest part of my job. I worked in some companies and I&#8217;ve seen a lot of ways to manage a bug: it could have been a no-bugtracker-at-all solution and you had to manage yourself the bug coming from an email to another person or it could have been a huge bugtracker with so many options that it was so horrible to use, you lose your mind there.</p>
+
+<p>I&#8217;ve tried all of these bugtrackers for a few months like:</p>
+
+<ul>
+<li><a href='http://trac.edgewall.org/'>trac</a></li>
+
+<li><a href='http://www.bugzilla.org/'>bugzilla</a></li>
+
+<li><a href='http://www.atlassian.com/software/jira/'>jira</a></li>
+
+<li><a href='http://www.redmine.org/'>redmine</a></li>
+
+<li><a href='https://drive.google.com'>a shared google spreadsheet</a> (aye, not fundamentally a bad idea in a small team)</li>
+
+<li>some others I don&#8217;t remember the name</li>
+</ul>
+
+<p>Well, and I can say no one satisfied me because I spent more time to try to use it correctly and to respect a process that it wasn&#8217;t mine. I felt like inflexible and can&#8217;t write down quickly a note or a bug.</p>
+
+<p>So okay, I&#8217;ve done my part about bugtracking. Now, about process. Well, nothing to say about process to be honest. I just can tell you that I&#8217;ve tried scrum, it works or not, depending on how your entreprise is, how people are, how people take serious this process. 6 months before, I could have said &#8220;fuck yeah, work with scrum method, it&#8217;s the way to succeed!&#8221;. But now, it ain&#8217;t anymore. Too much process can kill the process.</p>
+
+<h3 id='fact'>Fact</h3>
+
+<p>Well. throw away all these shits and let&#8217;s talk about a solution I can say: yes, that&#8217;s how I will work now.</p>
+
+<p>As professional git repo, we choose <a href='https://github.com/'>Github</a>. Ok. <a href='https://github.com/'>Github</a> provides Github issues solution. Well, ok. You have tickets, you can assign a ticket to someone, you can choose a label, comment the ticket. But? There&#8217;s no priority management. It&#8217;s a shame, yes. That&#8217;s where <a href='http://huboard.com/'>huboard</a> comes and saves the world.</p>
+
+<h3 id='huboard_the_solution'>Huboard, the solution</h3>
+
+<p><a href='http://huboard.com/'>Huboard</a> is simply an <a href='https://github.com/rauhryan/huboard'>open source application</a> written in ruby which allows you to manage the priorities of github issues. Just that, you see. It&#8217;s based on <a href='http://en.wikipedia.org/wiki/Scrum_%28development%29'>scrum</a> or <a href='http://en.wikipedia.org/wiki/Kanban'>kanban</a> (yes I don&#8217;t see for the moment the true difference but anyway) and it lets you to choose the priority of a ticket.</p>
+
+<p>You have four columns: <code>Backlog</code>, <code>Ready</code>, <code>Working</code>, <code>Done</code>. You place tickets wherever you want and you move them between these columns. Aye, you&#8217;ve created life to your tickets! \o/</p>
+
+<p>Now, let&#8217;s see in pictures.</p>
+
+<p><img alt='huboard project list' src='/blog/medias/img/huboard-1.png' /></p>
+
+<p>Here you&#8217;ve got your projects.</p>
+
+<p><img alt='huboard ticket management' src='/blog/medias/img/huboard-2.png' /></p>
+
+<p>Here&#8217;s your project board.</p>
+
+<p>You can filter your tickets by assignment, labels. You can see your milestones, your backlog, etc. And that&#8217;s all.</p>
+
+<h3 id='how_it_works_behind'>How it works behind</h3>
+
+<p>To work with github, <a href='http://huboard.com/'>huboard</a> asks some low permissions like - to be honest - almost all permissions. Yes, I see you to be afraid but let me explain how it works.</p>
+
+<p>It has no database, it just asks you permissions and the only things it does are to add some labels (Backlog, Ready, &#8230;) to know the life of the issues and to add a comment like <code>&lt;!--- @huboard:{&quot;order&quot;:42.6875}    --&gt;</code> to know the priority (verticale way so).</p>
+
+<p>If you don&#8217;t trust the online version (and I can understand you, it was my first reaction) well, let&#8217;s have a try to the local version. Yes, because you can install your own <a href='http://huboard.com/'>huboard</a>. Just <a href='https://github.com/rauhryan/huboard#to-run-locally'>follow the commander</a>.</p>
+
+<h3 id='why_huboard_and_not_other_scrumkanbanlike_apps'>Why Huboard and not other scrum/kanban-like apps?</h3>
+
+<p><a href='http://huboard.com/'>Huboard</a> is simple, open source, free, clean about design and the reactivity of the maintainer(s) is amazing (say hello to <a href='https://twitter.com/rauhryan'>@rauhryan</a> or <a href='https://twitter.com/huboard'>@huboard</a> ;))</p>
+
+<p>I&#8217;ve tried <a href='https://trello.com/'>trello</a> and <a href='https://kanbanery.com/'>kanbanery</a> to organise my/our cards. Well, nope. I can&#8217;t use them. Ugly, boring, not open source (right?). <a href='https://kanbanery.com/'>Kanbanery</a> is ok but why I prefer <a href='http://huboard.com/'>huboard</a> to <a href='https://kanbanery.com/'>kanbanery</a>? <a href='https://kanbanery.com/'>Kanbanery</a>, you create your cards, you create your github issues and you <strong>have to</strong> link your github issues or/and your commits to your cards. It means <a href='https://kanbanery.com/'>kanbanery</a> can use <a href='https://github.com/'>Github</a> but it forces you to do some copy/paste to use the github feature, which is boring. <a href='http://huboard.com/'>Huboard</a> does not do like that. <a href='http://huboard.com/'>Huboard</a> is a wrapper on github and that&#8217;s why I&#8217;m loving it. You have nothing to do, it&#8217;s already synchronised with github and you just have to manage your card priorities, cards which are already created in Github Issues. How wonderful it is.</p>
+
+<h3 id='bonus'>Bonus</h3>
+
+<p>Yes, there&#8217;s a bonus. Yeeeeehaa. If you want to improve your github issue skills, I advise you to use this excellent github issue client (cli client) called <a href='https://github.com/stephencelis/ghi'>ghi</a>. Simple, efficient. You really should have a try.</p>
+
+<p><img alt='ghi man' src='/blog/medias/img/ghi-man.png' /></p>
+
+<p><img alt='ghi list' src='/blog/medias/img/ghi-list.png' /></p>
+
+<p><strong>tl;dr</strong>: <a href='http://huboard.com/'>huboard</a> + <a href='https://github.com/stephencelis/ghi'>ghi</a> for the win.</p>
+	</section>
+    <section class="report">
+        Any feedbacks, errors, typo, thanks, please contact me on twitter at <a href="https://www.twitter.com/_kud/">@_kud</a>.
+    </section>
+    <section class="about-author">
+        <img src="https://fr.gravatar.com/userimage/10327718/b7a61a57884f7e973154b1d737f8c380.jpeg" alt="" class="pic"> Erwann. Ex - back-end dev now front-end dev. Works at <a href="//www.playmedia.fr">playmedia</a>, company editing <a href="//www.playtv.fr">playtv.fr</a>. Also drummer, photographer, cinema lover and so on. Need <a href="//www.kud.fr">mooaar</a>?
+    </section>
+</article>
+        </section>
+        
+        <script type="text/javascript">
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-25156890-3']);
+            _gaq.push(['_trackPageview']);
+
+            (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+        </script>
+    </body>
+</html>

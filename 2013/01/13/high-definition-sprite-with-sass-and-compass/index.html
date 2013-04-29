@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="Manifest of a frontend dev.">
+        <meta name="keywords" content="dev,css,css3,html,html5,api,javascript,js,zepto,jquery,backbone,nodejs,node,frontend,front">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>_kud.blog -- High Definition Sprite with SASS and Compass</title>
+        <link rel="shortcut icon" type="image/png" href="/favicon.png" />
+        <link rel="stylesheet" type="text/css" href="/blog/assets/css/style.css">
+        <link href="/blog/feed.xml" rel="alternate" type="application/rss+xml">
+    </head>
+    <body>
+        <aside>
+            <nav>
+                <ul>
+                    <li><a href="/blog/" class="active">Blog</a></li>
+                    
+                    <li><a href="http://www.kud.fr">Profile</a></li>
+                    <li><a href="https://www.github.com/kud">Github</a></li>
+                    <li><a href="https://www.twitter.com/_kud">Twitter</a></li>
+                </ul>
+            </nav>
+        </aside>
+        <section class="main">
+            <h1><a href="/blog/">Manifest of a frontend dev</a></h1>
+            <article>
+	<h2>High Definition Sprite with SASS and Compass</h2>
+	<div class="date">
+        <span class="decoration">
+            <span class="month">Jan</span>
+            <span class="day">13</span>
+        </span>
+        <span class="year">2013</span>
+    </div>
+	<div class="author">By <a href="http://kud.io">Erwann Mest</a></div>
+    
+	<div class="category">
+		<ul>
+            
+                <li><a href="#">css</a></li>
+            
+                <li><a href="#">sass</a></li>
+            
+		</ul>
+	</div>
+    
+	<section class="content">
+		<p>Last time, I wanted to create some sprites for high definition displays. Indeed, SVG or/and fonts are great to display icons but you can&#8217;t do so many things with it. You&#8217;re mostly limited by a <code>text-shadow</code> or some few effects, but you can&#8217;t really do whatever you want and browser / operating systems don&#8217;t render them equally.</p>
+
+<p>So here&#8217;s my trick to create a sprite with compass to high definition displays. Your images have to be x2 higher of the size they&#8217;ll really be once on the high definition display.</p>
+
+<pre><code>/* Put this file in your assets/stylesheets/ folder
+ *
+ * Example main.scss:
+ * @import &quot;compass&quot;;
+ * @import &quot;icons/*.png&quot;;
+ * @include all-icons-sprites;
+ *
+ * @import &quot;retina&quot;;
+ * 1. if all the images in your icons/ folder are retina size:
+ * @include retina-sprites($icons-sprites);
+ *
+ * 2. if only some of the images are retina size and they have a filename convention ex. x2-a.png, x2-b.png, x2-c.png
+ * @include retina-sprites($icons-sprites, sprite-names(sprite-map(&quot;icons/x2-*.png&quot;)));
+ *
+ * 3. otherwise you can manually list each retina image
+ * @include retina-sprites($icons-sprites, a b c);
+ *
+ * @import &quot;lib&quot;;
+ * @import &quot;base&quot;;
+ * ...
+ *
+ * Example equivalent of making background-position-x: 100%;
+ * .icons-x2-accordion-arrow {
+ *   @include retina-background-position($icons-sprites, x2-accordion-arrow, 100%);
+ * }
+ *
+ * TODO:
+ *     - Add &quot;if&quot; on dimensions when $icon-sprite-dimensions is false;
+ */
+
+// helper function to return dimensions of sprite map for use with retina sprites
+@function retina-dimensions($map) {
+  $path: sprite-path($map);
+  @return image-width($path)/2 image-height($path)/2;
+}
+
+// retina version of http://compass-style.org/reference/compass/helpers/sprites/#sprite-position
+@function retina-position($map, $sprite, $offset-x: 0, $offset-y: 0) {
+  $sprite-pos: sprite-position($map, $sprite);
+  $x: nth($sprite-pos, 1);
+  $y: nth($sprite-pos, 2);
+
+  // emulate sprite-background-position()
+  $retina-x: $offset-x;
+  $retina-y: $offset-y;
+  @if unit($offset-x) != &quot;%&quot; {
+    $retina-x: $x/2 + $offset-x;
+  }
+  @if unit($offset-y) != &quot;%&quot; {
+    $retina-y: $y/2 + $offset-y;
+  }
+  @return $retina-x $retina-y;
+}
+
+// retina version of http://compass-style.org/reference/compass/helpers/sprites/#sprite
+@function retina-sprite($map, $sprite, $offset-x: 0, $offset-y: 0) {
+  @return $map retina-position($map, $sprite, $offset-x, $offset-y);
+}
+
+// retina version of http://compass-style.org/reference/compass/utilities/sprites/base/#mixin-sprite-background-position
+@mixin retina-background-position($map, $sprite, $offset-x: 0, $offset-y: 0) {
+  background-position: retina-position($map, $sprite, $offset-x, $offset-y);
+}
+
+// adds the appropriate background-position and background-size styles to retina-ize sprites
+// usage example: @include retina-sprites($icons-sprites);
+// usage example: @include retina-sprites($icons-sprites, icon1 icon2 icon3);
+@mixin retina-sprites($map, $sprites: sprite-names($map)) {
+  $sprite-classes: ();
+
+  // calculate width and height of sprite map
+  @each $sprite in $sprites {
+    $sprite-classes: join($sprite-classes, #{&quot;.&quot;}sprite-map-name($map)-$sprite, comma);
+
+    // adjust sprite&#39;s background position
+    .#{sprite-map-name($map)-$sprite} {
+      @include retina-background-position($map, $sprite);
+
+      height: image-height(sprite-file($map, $sprite)) / 2;
+      width: image-width(sprite-file($map, $sprite)) / 2;
+    }
+  }
+
+  #{$sprite-classes} {
+    @include background-size(retina-dimensions($map));
+  }
+}</code></pre>
+
+<p>Enjoy.</p>
+
+<p>Soon, I&#8217;ll create a repo with all my sass/compass recipes.</p>
+	</section>
+    <section class="report">
+        Any feedbacks, errors, typo, thanks, please contact me on twitter at <a href="https://www.twitter.com/_kud/">@_kud</a>.
+    </section>
+    <section class="about-author">
+        <img src="https://fr.gravatar.com/userimage/10327718/b7a61a57884f7e973154b1d737f8c380.jpeg" alt="" class="pic"> Erwann. Ex - back-end dev now front-end dev. Works at <a href="//www.playmedia.fr">playmedia</a>, company editing <a href="//www.playtv.fr">playtv.fr</a>. Also drummer, photographer, cinema lover and so on. Need <a href="//www.kud.fr">mooaar</a>?
+    </section>
+</article>
+        </section>
+        
+        <script type="text/javascript">
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-25156890-3']);
+            _gaq.push(['_trackPageview']);
+
+            (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+        </script>
+    </body>
+</html>

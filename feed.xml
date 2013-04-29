@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>_kud.blog</title>
+        <description>A front-end dev, a blog</description>
+        <link>http://kud.io/blog/</link>
+        <atom:link href="http://kud.io/blog//feed.xml" rel="self" type="application/rss+xml" />
+        
+            <item>
+                <title>Do not push to prod on Fridays (picture)</title>
+                <description>&lt;p&gt;Hahaha, it had to be done, it&amp;#8217;s now done, thank you &lt;a href=&#39;http://www.commitstrip.com&#39;&gt;commitstrip.com&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#39;http://www.commitstrip.com/wp-content/uploads/2013/03/Ne-pas-pousser-en-prod-le-vendredi-print1.jpg&#39;&gt;&lt;img alt=&#39;Do Not Push To Prod On Fridays&#39; src=&#39;/blog/medias/img/do-not-push-to-prod-on-fridays.jpg&#39; /&gt;&lt;/a&gt;&lt;/p&gt;</description>
+                <pubDate>Tue, 12 Mar 2013 00:00:00 +0100</pubDate>
+                <link>http://kud.io/blog//2013/03/12/do-not-push-to-prod-on-fridays-picture</link>
+                <guid isPermaLink="true">http://kud.io/blog//2013/03/12/do-not-push-to-prod-on-fridays-picture</guid>
+            </item>
+        
+            <item>
+                <title>A quite good definition of ourselves (developers)</title>
+                <description>&lt;blockquote&gt;
+&lt;p&gt;As developers, we seem to be hardwired to try to fix things. And once we managed something, we get bored with it and want to automate it so that in the future we don’t have to think about it any longer. We are already pre-occupied with solving the next puzzle. We delude ourselves into thinking that everything can get a process that makes it easier. After all, this is what programming was meant for – doing boring repetitive tasks for us so we can use our brains for things that need more lateral thinking and analysis.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;From a quote of &lt;a href=&#39;http://christianheilmann.com&#39;&gt;Christian Heilmann&lt;/a&gt; (in a &lt;a href=&#39;http://christianheilmann.com/2013/02/20/helping-or-hurting/&#39;&gt;keynote&lt;/a&gt;) I wanted to keep in mind to explain what I think about our job:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Developers aren&amp;#8217;t coders. They are solvers and use code to do it.&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+                <pubDate>Tue, 12 Mar 2013 00:00:00 +0100</pubDate>
+                <link>http://kud.io/blog//2013/03/12/a-quite-good-definition-of-ourselves-developers</link>
+                <guid isPermaLink="true">http://kud.io/blog//2013/03/12/a-quite-good-definition-of-ourselves-developers</guid>
+            </item>
+        
+            <item>
+                <title>gdipp or how to get a smooth and clean font on Windows</title>
+                <description>&lt;p&gt;Fonts. Fonts, fonts, fonts. I spend all my days to code on Mac OS X at work and when I get back home, I&amp;#8217;m so frustrated to have such a fucking font render on my Windows. Of course I have ClearType. But it&amp;#8217;s really really not enough for me, even with the most tough settings.&lt;/p&gt;
+
+&lt;p&gt;Anyway. This is where I found a not-so-bad application which allows you have a kinda Mac OS X render on fonts. This is cool. Yes. It&amp;#8217;s called &lt;a href=&#39;http://code.google.com/p/gdipp/&#39;&gt;gdipp&lt;/a&gt;, it&amp;#8217;s free, open source as well and it rocks. I will simply quote it&lt;/p&gt;
+
+&lt;p&gt;The gdipp (codename) project is a replacement of the Windows text render, which brings to you the effect of text like Mac OS and Linux distributions. It is easy to use with ignorable overhead, and it is fully customizable.&lt;/p&gt;
+
+&lt;p&gt;Isn&amp;#8217;t it perfect, aye? Go get some and you&amp;#8217;ll tell me your feeling.&lt;/p&gt;
+
+&lt;p&gt;Some samples there:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Explorer&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href=&#39;/blog/medias/img/gdipp-explorer-off.png&#39;&gt;&lt;img alt=&#39;Explorer without gdipp&#39; src=&#39;/blog/medias/img/gdipp-explorer-off.png&#39; /&gt;&lt;/a&gt; &lt;em&gt;Without gdipp&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#39;/blog/medias/img/gdipp-explorer-on.png&#39;&gt;&lt;img alt=&#39;Explorer with gdipp&#39; src=&#39;/blog/medias/img/gdipp-explorer-on.png&#39; /&gt;&lt;/a&gt; &lt;em&gt;With gdipp&lt;/em&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Sublime Text&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href=&#39;/blog/medias/img/gdipp-sublimetext-off.png&#39;&gt;&lt;img alt=&#39;Sublime Text without gdipp&#39; src=&#39;/blog/medias/img/gdipp-sublimetext-off.png&#39; /&gt;&lt;/a&gt; &lt;em&gt;Without gdipp&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#39;/blog/medias/img/gdipp-sublimetext-on.png&#39;&gt;&lt;img alt=&#39;Sublime Text with gdipp&#39; src=&#39;/blog/medias/img/gdipp-sublimetext-on.png&#39; /&gt;&lt;/a&gt; &lt;em&gt;With gdipp&lt;/em&gt;&lt;/p&gt;</description>
+                <pubDate>Mon, 11 Mar 2013 00:00:00 +0100</pubDate>
+                <link>http://kud.io/blog//2013/03/11/gdipp-or-how-to-get-a-smooth-and-clean-font-on-windows</link>
+                <guid isPermaLink="true">http://kud.io/blog//2013/03/11/gdipp-or-how-to-get-a-smooth-and-clean-font-on-windows</guid>
+            </item>
+        
+            <item>
+                <title>HexChat, your Windows IRC Client</title>
+                <description>&lt;p&gt;You&amp;#8217;re on Windows (or Linux) and you probably want to come back or/and use &lt;a href=&#39;http://en.wikipedia.org/wiki/Internet_Relay_Chat&#39;&gt;IRC&lt;/a&gt;. Well, &lt;a href=&#39;http://hexchat.org&#39;&gt;HexChat&lt;/a&gt; is your boy. &lt;a href=&#39;http://hexchat.org&#39;&gt;HexChat&lt;/a&gt; is an &lt;a href=&#39;http://en.wikipedia.org/wiki/Internet_Relay_Chat&#39;&gt;IRC&lt;/a&gt; client based on &lt;a href=&#39;http://xchat.org/&#39;&gt;XChat&lt;/a&gt;, but unlike &lt;a href=&#39;http://xchat.org/&#39;&gt;XChat&lt;/a&gt; it&amp;#8217;s completely free for both Windows and Unix-like systems.&lt;/p&gt;
+
+&lt;p&gt;Everything is like &lt;a href=&#39;http://xchat.org/&#39;&gt;XChat&lt;/a&gt; but better, more updated and free on Windows (other platforms too, for sure). Plus the theme system is really nice. Just &lt;a href=&#39;http://hexchat.org/themes.html&#39;&gt;download a theme&lt;/a&gt; and it will be packaged with an executable which allows you to easily change your &lt;a href=&#39;http://hexchat.org&#39;&gt;HexChat&lt;/a&gt; colours.&lt;/p&gt;
+
+&lt;p&gt;Have a try!&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt=&#39;HexChat&#39; src=&#39;/blog/medias/img/hexchat.png&#39; /&gt;&lt;/p&gt;</description>
+                <pubDate>Wed, 27 Feb 2013 00:00:00 +0100</pubDate>
+                <link>http://kud.io/blog//2013/02/27/hexchat-your-windows-irc-client</link>
+                <guid isPermaLink="true">http://kud.io/blog//2013/02/27/hexchat-your-windows-irc-client</guid>
+            </item>
+        
+            <item>
+                <title>How to exit your code in JavaScript</title>
+                <description>&lt;p&gt;There&amp;#8217;s no real exit function in JavaScript, and sometimes you need to break your code just after debugging something.&lt;/p&gt;
+
+&lt;p&gt;To do that, you have two cases: when you are in a function, when you are in a loop.&lt;/p&gt;
+
+&lt;h3 id=&#39;in_a_function&#39;&gt;In a function&lt;/h3&gt;
+
+&lt;p&gt;Just use &lt;code&gt;return;&lt;/code&gt;. Let&amp;#8217;s take the &lt;a href=&#39;http://lodash.com/&#39;&gt;Lo-Dash&lt;/a&gt; &lt;code&gt;isEmpty()&lt;/code&gt; function where you need to debug a part of it.&lt;/p&gt;
+&lt;div class=&#39;highlight&#39;&gt;&lt;pre&gt;&lt;code class=&#39;javascript&#39;&gt;&lt;span class=&#39;kd&#39;&gt;function&lt;/span&gt; &lt;span class=&#39;nx&#39;&gt;isEmpty&lt;/span&gt;&lt;span class=&#39;p&#39;&gt;(&lt;/span&gt;&lt;span class=&#39;nx&#39;&gt;value&lt;/span&gt;&lt;span class=&#39;p&#39;&gt;)&lt;/span&gt; &lt;span class=&#39;p&#39;&gt;{&lt;/span&gt;
+    &lt;span class=&#39;kd&#39;&gt;var&lt;/span&gt; &lt;span class=&#39;nx&#39;&gt;result&lt;/span&gt; &lt;span class=&#39;o&#39;&gt;=&lt;/span&gt; &lt;span class=&#39;kc&#39;&gt;true&lt;/span&gt;&lt;span class=&#39;p&#39;&gt;;&lt;/span&gt;
+    &lt;span class=&#39;k&#39;&gt;if&lt;/span&gt; &lt;span class=&#39;p&#39;&gt;(&lt;/span&gt;&lt;span class=&#39;o&#39;&gt;!&lt;/span&gt;&lt;span class=&#39;nx&#39;&gt;value&lt;/span&gt;&lt;span class=&#39;p&#39;&gt;)&lt;/span&gt; &lt;span class=&#39;p&#39;&gt;{&lt;/span&gt;
+      &lt;span class=&#39;k&#39;&gt;return&lt;/span&gt; &lt;span class=&#39;nx&#39;&gt;result&lt;/span&gt;&lt;span class=&#39;p&#39;&gt;;&lt;/span&gt;
+    &lt;span class=&#39;p&#39;&gt;}&lt;/span&gt;
+    &lt;span class=&#39;kd&#39;&gt;var&lt;/span&gt; &lt;span class=&#39;nx&#39;&gt;className&lt;/span&gt; &lt;span class=&#39;o&#39;&gt;=&lt;/span&gt; &lt;span class=&#39;nx&#39;&gt;toString&lt;/span&gt;&lt;span class=&#39;p&#39;&gt;.&lt;/span&gt;&lt;span class=&#39;nx&#39;&gt;call&lt;/span&gt;&lt;span class=&#39;p&#39;&gt;(&lt;/span&gt;&lt;span class=&#39;nx&#39;&gt;value&lt;/span&gt;&lt;span class=&#39;p&#39;&gt;),&lt;/span&gt;
+        &lt;span class=&#39;nx&#39;&gt;length&lt;/span&gt; &lt;span class=&#39;o&#39;&gt;=&lt;/span&gt; &lt;span class=&#39;nx&#39;&gt;value&lt;/span&gt;&lt;span class=&#39;p&#39;&gt;.&lt;/span&gt;&lt;span class=&#39;nx&#39;&gt;length&lt;/span&gt;&lt;span class=&#39;p&#39;&gt;;&lt;/span&gt;
+
+    &lt;span class=&#39;c1&#39;&gt;// I want to see what length is. So, here&amp;#39;s my code:&lt;/span&gt;
+    &lt;span class=&#39;nx&#39;&gt;console&lt;/span&gt;&lt;span class=&#39;p&#39;&gt;.&lt;/span&gt;&lt;span class=&#39;nx&#39;&gt;log&lt;/span&gt;&lt;span class=&#39;p&#39;&gt;(&lt;/span&gt;&lt;span class=&#39;nx&#39;&gt;length&lt;/span&gt;&lt;span class=&#39;p&#39;&gt;);&lt;/span&gt;
+    &lt;span class=&#39;k&#39;&gt;return&lt;/span&gt;&lt;span class=&#39;p&#39;&gt;;&lt;/span&gt;
+
+    &lt;span class=&#39;k&#39;&gt;if&lt;/span&gt; &lt;span class=&#39;p&#39;&gt;((&lt;/span&gt;&lt;span class=&#39;nx&#39;&gt;className&lt;/span&gt; &lt;span class=&#39;o&#39;&gt;==&lt;/span&gt; &lt;span class=&#39;nx&#39;&gt;arrayClass&lt;/span&gt; &lt;span class=&#39;o&#39;&gt;||&lt;/span&gt; &lt;span class=&#39;nx&#39;&gt;className&lt;/span&gt; &lt;span class=&#39;o&#39;&gt;==&lt;/span&gt; &lt;span class=&#39;nx&#39;&gt;stringClass&lt;/span&gt; &lt;span class=&#39;o&#39;&gt;||&lt;/span&gt;
+        &lt;span class=&#39;nx&#39;&gt;className&lt;/span&gt; &lt;span class=&#39;o&#39;&gt;==&lt;/span&gt; &lt;span class=&#39;nx&#39;&gt;argsClass&lt;/span&gt; &lt;span class=&#39;o&#39;&gt;||&lt;/span&gt; &lt;span class=&#39;p&#39;&gt;(&lt;/span&gt;&lt;span class=&#39;nx&#39;&gt;noArgsClass&lt;/span&gt; &lt;span class=&#39;o&#39;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&#39;nx&#39;&gt;isArguments&lt;/span&gt;&lt;span class=&#39;p&#39;&gt;(&lt;/span&gt;&lt;span class=&#39;nx&#39;&gt;value&lt;/span&gt;&lt;span class=&#39;p&#39;&gt;)))&lt;/span&gt; &lt;span class=&#39;o&#39;&gt;||&lt;/span&gt;
+        &lt;span class=&#39;p&#39;&gt;(&lt;/span&gt;&lt;span class=&#39;nx&#39;&gt;className&lt;/span&gt; &lt;span class=&#39;o&#39;&gt;==&lt;/span&gt; &lt;span class=&#39;nx&#39;&gt;objectClass&lt;/span&gt; &lt;span class=&#39;o&#39;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&#39;k&#39;&gt;typeof&lt;/span&gt; &lt;span class=&#39;nx&#39;&gt;length&lt;/span&gt; &lt;span class=&#39;o&#39;&gt;==&lt;/span&gt; &lt;span class=&#39;s1&#39;&gt;&amp;#39;number&amp;#39;&lt;/span&gt; &lt;span class=&#39;o&#39;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&#39;nx&#39;&gt;isFunction&lt;/span&gt;&lt;span class=&#39;p&#39;&gt;(&lt;/span&gt;&lt;span class=&#39;nx&#39;&gt;value&lt;/span&gt;&lt;span class=&#39;p&#39;&gt;.&lt;/span&gt;&lt;span class=&#39;nx&#39;&gt;splice&lt;/span&gt;&lt;span class=&#39;p&#39;&gt;)))&lt;/span&gt; &lt;span class=&#39;p&#39;&gt;{&lt;/span&gt;
+      &lt;span class=&#39;k&#39;&gt;return&lt;/span&gt; &lt;span class=&#39;o&#39;&gt;!&lt;/span&gt;&lt;span class=&#39;nx&#39;&gt;length&lt;/span&gt;&lt;span class=&#39;p&#39;&gt;;&lt;/span&gt;
+    &lt;span class=&#39;p&#39;&gt;}&lt;/span&gt;
+    &lt;span class=&#39;nx&#39;&gt;forOwn&lt;/span&gt;&lt;span class=&#39;p&#39;&gt;(&lt;/span&gt;&lt;span class=&#39;nx&#39;&gt;value&lt;/span&gt;&lt;span class=&#39;p&#39;&gt;,&lt;/span&gt; &lt;span class=&#39;kd&#39;&gt;function&lt;/span&gt;&lt;span class=&#39;p&#39;&gt;()&lt;/span&gt; &lt;span class=&#39;p&#39;&gt;{&lt;/span&gt;
+      &lt;span class=&#39;k&#39;&gt;return&lt;/span&gt; &lt;span class=&#39;p&#39;&gt;(&lt;/span&gt;&lt;span class=&#39;nx&#39;&gt;result&lt;/span&gt; &lt;span class=&#39;o&#39;&gt;=&lt;/span&gt; &lt;span class=&#39;kc&#39;&gt;false&lt;/span&gt;&lt;span class=&#39;p&#39;&gt;);&lt;/span&gt;
+    &lt;span class=&#39;p&#39;&gt;});&lt;/span&gt;
+    &lt;span class=&#39;k&#39;&gt;return&lt;/span&gt; &lt;span class=&#39;nx&#39;&gt;result&lt;/span&gt;&lt;span class=&#39;p&#39;&gt;;&lt;/span&gt;
+  &lt;span class=&#39;p&#39;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;It will display the variable &lt;code&gt;length&lt;/code&gt; in the console and stop the execution of the rest of the function.&lt;/p&gt;
+
+&lt;h3 id=&#39;in_a_loop&#39;&gt;In a loop&lt;/h3&gt;
+
+&lt;p&gt;More simple, just use &lt;code&gt;break;&lt;/code&gt;. See:&lt;/p&gt;
+&lt;div class=&#39;highlight&#39;&gt;&lt;pre&gt;&lt;code class=&#39;javascript&#39;&gt;&lt;span class=&#39;k&#39;&gt;for&lt;/span&gt; &lt;span class=&#39;p&#39;&gt;(&lt;/span&gt;&lt;span class=&#39;nx&#39;&gt;x&lt;/span&gt;&lt;span class=&#39;o&#39;&gt;=&lt;/span&gt;&lt;span class=&#39;mi&#39;&gt;1&lt;/span&gt;&lt;span class=&#39;p&#39;&gt;;&lt;/span&gt; &lt;span class=&#39;nx&#39;&gt;x&lt;/span&gt;&lt;span class=&#39;o&#39;&gt;&amp;lt;=&lt;/span&gt;&lt;span class=&#39;mi&#39;&gt;10&lt;/span&gt;&lt;span class=&#39;p&#39;&gt;;&lt;/span&gt; &lt;span class=&#39;nx&#39;&gt;x&lt;/span&gt;&lt;span class=&#39;o&#39;&gt;++&lt;/span&gt;&lt;span class=&#39;p&#39;&gt;)&lt;/span&gt; &lt;span class=&#39;p&#39;&gt;{&lt;/span&gt;
+    &lt;span class=&#39;nx&#39;&gt;a&lt;/span&gt; &lt;span class=&#39;o&#39;&gt;=&lt;/span&gt; &lt;span class=&#39;nx&#39;&gt;x&lt;/span&gt;&lt;span class=&#39;o&#39;&gt;-&lt;/span&gt;&lt;span class=&#39;mi&#39;&gt;7&lt;/span&gt;&lt;span class=&#39;p&#39;&gt;;&lt;/span&gt;
+
+    &lt;span class=&#39;c1&#39;&gt;// What&amp;#39;s in `a` variable&lt;/span&gt;
+    &lt;span class=&#39;nx&#39;&gt;console&lt;/span&gt;&lt;span class=&#39;p&#39;&gt;.&lt;/span&gt;&lt;span class=&#39;nx&#39;&gt;log&lt;/span&gt;&lt;span class=&#39;p&#39;&gt;(&lt;/span&gt;&lt;span class=&#39;nx&#39;&gt;a&lt;/span&gt;&lt;span class=&#39;p&#39;&gt;);&lt;/span&gt;
+    &lt;span class=&#39;k&#39;&gt;break&lt;/span&gt;&lt;span class=&#39;p&#39;&gt;;&lt;/span&gt;
+&lt;span class=&#39;p&#39;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id=&#39;debugger&#39;&gt;debugger;&lt;/h3&gt;
+
+&lt;p&gt;For the fellow developers who already use it, &lt;a href=&#39;https://www.google.com/intl/en/chrome/browser/&#39;&gt;Chrome&lt;/a&gt; has an handy instruction named &lt;strong&gt;debugger&lt;/strong&gt; which acts as if you set a breakpoint in your javascript code.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Type &lt;code&gt;debugger;&lt;/code&gt; in your js source file,&lt;/li&gt;
+
+&lt;li&gt;Open the chrome dev tools&lt;/li&gt;
+
+&lt;li&gt;Reload your browser&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;and once &lt;a href=&#39;https://www.google.com/intl/en/chrome/browser/&#39;&gt;Chrome&lt;/a&gt; will execute the debugger instruction, your script will be paused and the script panel of the Developer Tools will automatically open. The scripts panel has all the common debugger features like add/remove breakpoint, step over an instruction, step into a function and step out, see the call stack&amp;#8230; Now you are ready for debugging!&lt;/p&gt;
+
+&lt;p&gt;For a more in depth use of breakpoints in &lt;a href=&#39;https://www.google.com/intl/en/chrome/browser/&#39;&gt;Chrome&lt;/a&gt;, the &lt;a href=&#39;https://developers.google.com/chrome-developer-tools/docs/scripts-breakpoints&#39;&gt;chrome dev center&lt;/a&gt; is a good starting point. And for the firefox users, take a look here &lt;a href=&#39;https://developer.mozilla.org/en-US/docs/Venkman&#39;&gt;Venkmam, the Mozilla&amp;#8217;s JavaScript Debugger&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;(Informations about chrome via &lt;a href=&#39;https://github.com/lionelB&#39;&gt;lionelB&lt;/a&gt;).&lt;/em&gt;&lt;/p&gt;</description>
+                <pubDate>Wed, 06 Feb 2013 00:00:00 +0100</pubDate>
+                <link>http://kud.io/blog//2013/02/06/how-to-exit-your-code-in-javascript</link>
+                <guid isPermaLink="true">http://kud.io/blog//2013/02/06/how-to-exit-your-code-in-javascript</guid>
+            </item>
+        
+            <item>
+                <title>Responsive Design Bookmarklets</title>
+                <description>&lt;p&gt;This is a list of great responsive design bookmarklets. Enjoy.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#39;http://lab.maltewassermann.com/viewport-resizer/&#39;&gt;maltewassermann.com&lt;/a&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;a href=&#39;http://responsive.victorcoulon.fr/&#39;&gt;victorcoulon.fr&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+                <pubDate>Fri, 01 Feb 2013 00:00:00 +0100</pubDate>
+                <link>http://kud.io/blog//2013/02/01/responsive-design-bookmarklets</link>
+                <guid isPermaLink="true">http://kud.io/blog//2013/02/01/responsive-design-bookmarklets</guid>
+            </item>
+        
+            <item>
+                <title>Credentials with Zepto</title>
+                <description>&lt;p&gt;If you need to manage cookies on &lt;a href=&#39;http://www.html5rocks.com/en/tutorials/cors/&#39;&gt;CORS&lt;/a&gt; requests with &lt;a href=&#39;http://zeptojs.com/&#39;&gt;Zepto&lt;/a&gt; (yes, they do not manage &lt;a href=&#39;http://api.jquery.com/jQuery.ajax/&#39;&gt;jQuery xhrFields&lt;/a&gt; yet), just add this setting:&lt;/p&gt;
+&lt;div class=&#39;highlight&#39;&gt;&lt;pre&gt;&lt;code class=&#39;javascript&#39;&gt;&lt;span class=&#39;nx&#39;&gt;$&lt;/span&gt;&lt;span class=&#39;p&#39;&gt;.&lt;/span&gt;&lt;span class=&#39;nx&#39;&gt;ajaxSettings&lt;/span&gt;&lt;span class=&#39;p&#39;&gt;.&lt;/span&gt;&lt;span class=&#39;nx&#39;&gt;beforeSend&lt;/span&gt; &lt;span class=&#39;o&#39;&gt;=&lt;/span&gt; &lt;span class=&#39;kd&#39;&gt;function&lt;/span&gt;&lt;span class=&#39;p&#39;&gt;(&lt;/span&gt;&lt;span class=&#39;nx&#39;&gt;xhr&lt;/span&gt;&lt;span class=&#39;p&#39;&gt;)&lt;/span&gt; &lt;span class=&#39;p&#39;&gt;{&lt;/span&gt;
+    &lt;span class=&#39;nx&#39;&gt;xhr&lt;/span&gt;&lt;span class=&#39;p&#39;&gt;.&lt;/span&gt;&lt;span class=&#39;nx&#39;&gt;withCredentials&lt;/span&gt; &lt;span class=&#39;o&#39;&gt;=&lt;/span&gt; &lt;span class=&#39;kc&#39;&gt;true&lt;/span&gt;&lt;span class=&#39;p&#39;&gt;;&lt;/span&gt;
+&lt;span class=&#39;p&#39;&gt;};&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Though, this code will affect every ajax request. Maybe you want it just for one request. In this case:&lt;/p&gt;
+&lt;div class=&#39;highlight&#39;&gt;&lt;pre&gt;&lt;code class=&#39;javascript&#39;&gt;&lt;span class=&#39;nx&#39;&gt;$&lt;/span&gt;&lt;span class=&#39;p&#39;&gt;.&lt;/span&gt;&lt;span class=&#39;nx&#39;&gt;ajax&lt;/span&gt;&lt;span class=&#39;p&#39;&gt;({&lt;/span&gt;
+    &lt;span class=&#39;nx&#39;&gt;url&lt;/span&gt;&lt;span class=&#39;o&#39;&gt;:&lt;/span&gt; &lt;span class=&#39;nx&#39;&gt;src&lt;/span&gt;&lt;span class=&#39;p&#39;&gt;,&lt;/span&gt;
+    &lt;span class=&#39;nx&#39;&gt;dataType&lt;/span&gt;&lt;span class=&#39;o&#39;&gt;:&lt;/span&gt; &lt;span class=&#39;s1&#39;&gt;&amp;#39;json&amp;#39;&lt;/span&gt;&lt;span class=&#39;p&#39;&gt;,&lt;/span&gt;
+    &lt;span class=&#39;nx&#39;&gt;beforeSend&lt;/span&gt;&lt;span class=&#39;o&#39;&gt;:&lt;/span&gt; &lt;span class=&#39;kd&#39;&gt;function&lt;/span&gt;&lt;span class=&#39;p&#39;&gt;(&lt;/span&gt;&lt;span class=&#39;nx&#39;&gt;xhr&lt;/span&gt;&lt;span class=&#39;p&#39;&gt;)&lt;/span&gt; &lt;span class=&#39;p&#39;&gt;{&lt;/span&gt;
+        &lt;span class=&#39;nx&#39;&gt;xhr&lt;/span&gt;&lt;span class=&#39;p&#39;&gt;.&lt;/span&gt;&lt;span class=&#39;nx&#39;&gt;withCredentials&lt;/span&gt; &lt;span class=&#39;o&#39;&gt;=&lt;/span&gt; &lt;span class=&#39;kc&#39;&gt;false&lt;/span&gt;&lt;span class=&#39;p&#39;&gt;;&lt;/span&gt;
+    &lt;span class=&#39;p&#39;&gt;},&lt;/span&gt;
+    &lt;span class=&#39;nx&#39;&gt;success&lt;/span&gt;&lt;span class=&#39;o&#39;&gt;:&lt;/span&gt; &lt;span class=&#39;kd&#39;&gt;function&lt;/span&gt; &lt;span class=&#39;p&#39;&gt;(&lt;/span&gt;&lt;span class=&#39;nx&#39;&gt;response&lt;/span&gt;&lt;span class=&#39;p&#39;&gt;)&lt;/span&gt; &lt;span class=&#39;p&#39;&gt;{&lt;/span&gt;
+        &lt;span class=&#39;nx&#39;&gt;callback&lt;/span&gt;&lt;span class=&#39;p&#39;&gt;(&lt;/span&gt;&lt;span class=&#39;nx&#39;&gt;response&lt;/span&gt;&lt;span class=&#39;p&#39;&gt;);&lt;/span&gt;
+    &lt;span class=&#39;p&#39;&gt;}&lt;/span&gt;
+&lt;span class=&#39;p&#39;&gt;});&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Hope they will implement it soon, PR are already in queue.&lt;/p&gt;</description>
+                <pubDate>Fri, 01 Feb 2013 00:00:00 +0100</pubDate>
+                <link>http://kud.io/blog//2013/02/01/credentials-with-zepto</link>
+                <guid isPermaLink="true">http://kud.io/blog//2013/02/01/credentials-with-zepto</guid>
+            </item>
+        
+            <item>
+                <title>Ability.</title>
+                <description>&lt;p&gt;&lt;img alt=&#39;Ability.&#39; src=&#39;/blog/medias/img/ability.png&#39; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#39;http://www.flickr.com/photos/bud_caddell/3592960452/&#39;&gt;Venn Diagram - Happiness in Business&lt;/a&gt; by &lt;a href=&#39;http://www.flickr.com/photos/bud_caddell/&#39;&gt;Bud Caddell&lt;/a&gt;&lt;/p&gt;</description>
+                <pubDate>Mon, 28 Jan 2013 00:00:00 +0100</pubDate>
+                <link>http://kud.io/blog//2013/01/28/ability</link>
+                <guid isPermaLink="true">http://kud.io/blog//2013/01/28/ability</guid>
+            </item>
+        
+            <item>
+                <title>SVG icon libraries</title>
+                <description>&lt;p&gt;Because &lt;a href=&#39;http://en.wikipedia.org/wiki/Scalable_Vector_Graphics&#39;&gt;SVG&lt;/a&gt; are clean, useful in multi-device environment and sometimes you don&amp;#8217;t know or have time to design them, it&amp;#8217;s important to have your own &lt;a href=&#39;http://en.wikipedia.org/wiki/Scalable_Vector_Graphics&#39;&gt;SVG&lt;/a&gt; resources.&lt;/p&gt;
+
+&lt;p&gt;This is what I&amp;#8217;ve got. Please, share, do any &lt;a href=&#39;https://github.com/kud/blog/&#39;&gt;PR&lt;/a&gt; if you know some too.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#39;http://thenounproject.com/&#39;&gt;thenounproject.com&lt;/a&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;a href=&#39;http://iconmonstr.com/&#39;&gt;iconmonstr.com&lt;/a&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;a href=&#39;http://icomoon.io/app/&#39;&gt;icomoon.io&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+                <pubDate>Sat, 26 Jan 2013 00:00:00 +0100</pubDate>
+                <link>http://kud.io/blog//2013/01/26/svg-icon-libraries</link>
+                <guid isPermaLink="true">http://kud.io/blog//2013/01/26/svg-icon-libraries</guid>
+            </item>
+        
+            <item>
+                <title>id_rsa and id_dsa on Github or better known as WTF YOU CRAZY FELLA</title>
+                <description>&lt;p&gt;This evening, I was quietly seated on my chair, doing some geek stuff&amp;#8230; when came a tweet from nowhere:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Enjoy! https://github.com/search?q=XXXX (1)&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;(1) I have deliberately broken the link not to help people who want to do bad things with this information.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt=&#39;LimeChat&#39; src=&#39;/blog/medias/img/github-fail.jpg&#39; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Yes, it is: a search on &lt;a href=&#39;https://www.github.com&#39;&gt;Github&lt;/a&gt; which gives you all people sharing their &lt;code&gt;id_rsa&lt;/code&gt; and &lt;code&gt;id_rsa.pub&lt;/code&gt; on their repos. But for fuck&amp;#8217;s sake? Are you loony?!&lt;/p&gt;
+
+&lt;p&gt;Just to be clear: an &lt;code&gt;id_rsa&lt;/code&gt; is a &lt;strong&gt;private&lt;/strong&gt; key containing the protocol version 2 RSA authentication identity of the user. This file should not be readable by anyone but the user. In other words, it&amp;#8217;s &lt;strong&gt;your own personal key&lt;/strong&gt; to identify you and allow you to connect to other servers!&lt;/p&gt;
+
+&lt;p&gt;The &lt;code&gt;id_rsa.pub&lt;/code&gt; file contains the protocol version 2 RSA public key for authentication. It&amp;#8217;s the file on the server who says to this same server &amp;#8220;Yeah, I accept this kind of person&amp;#8221; (kind which is defined by your private key).&lt;/p&gt;
+
+&lt;p&gt;So. &lt;strong&gt;Do. Not. Ever. Share. Your private key.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;And about public key, only on server you would like to connect to. On &lt;a href=&#39;https://www.github.com&#39;&gt;Github&lt;/a&gt;, it&amp;#8217;s there: &lt;a href=&#39;https://github.com/settings/ssh&#39;&gt;github.com/settings/ssh&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&#39;bonus&#39;&gt;Bonus&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#39;http://en.wikipedia.org/wiki/Digital_Signature_Algorithm&#39;&gt;DSA&lt;/a&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;a href=&#39;http://en.wikipedia.org/wiki/RSA_%28algorithm%29&#39;&gt;RDA&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#39;troll&#39;&gt;Troll&lt;/h3&gt;
+
+&lt;p&gt;See the languages returned on the result page. :D&lt;/p&gt;</description>
+                <pubDate>Wed, 23 Jan 2013 00:00:00 +0100</pubDate>
+                <link>http://kud.io/blog//2013/01/23/id_rsa-and-id_dsa-on-github-or-better-known-as-wtf-you-crazy-fella</link>
+                <guid isPermaLink="true">http://kud.io/blog//2013/01/23/id_rsa-and-id_dsa-on-github-or-better-known-as-wtf-you-crazy-fella</guid>
+            </item>
+        
+    </channel>
+</rss>

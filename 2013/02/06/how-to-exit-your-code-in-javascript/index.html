@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="Manifest of a frontend dev.">
+        <meta name="keywords" content="dev,css,css3,html,html5,api,javascript,js,zepto,jquery,backbone,nodejs,node,frontend,front">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>_kud.blog -- How to exit your code in JavaScript</title>
+        <link rel="shortcut icon" type="image/png" href="/favicon.png" />
+        <link rel="stylesheet" type="text/css" href="/blog/assets/css/style.css">
+        <link href="/blog/feed.xml" rel="alternate" type="application/rss+xml">
+    </head>
+    <body>
+        <aside>
+            <nav>
+                <ul>
+                    <li><a href="/blog/" class="active">Blog</a></li>
+                    
+                    <li><a href="http://www.kud.fr">Profile</a></li>
+                    <li><a href="https://www.github.com/kud">Github</a></li>
+                    <li><a href="https://www.twitter.com/_kud">Twitter</a></li>
+                </ul>
+            </nav>
+        </aside>
+        <section class="main">
+            <h1><a href="/blog/">Manifest of a frontend dev</a></h1>
+            <article>
+	<h2>How to exit your code in JavaScript</h2>
+	<div class="date">
+        <span class="decoration">
+            <span class="month">Feb</span>
+            <span class="day">06</span>
+        </span>
+        <span class="year">2013</span>
+    </div>
+	<div class="author">By <a href="http://kud.io">Erwann Mest</a></div>
+    
+	<div class="category">
+		<ul>
+            
+                <li><a href="#">javascript</a></li>
+            
+                <li><a href="#">debug</a></li>
+            
+		</ul>
+	</div>
+    
+	<section class="content">
+		<p>There&#8217;s no real exit function in JavaScript, and sometimes you need to break your code just after debugging something.</p>
+
+<p>To do that, you have two cases: when you are in a function, when you are in a loop.</p>
+
+<h3 id='in_a_function'>In a function</h3>
+
+<p>Just use <code>return;</code>. Let&#8217;s take the <a href='http://lodash.com/'>Lo-Dash</a> <code>isEmpty()</code> function where you need to debug a part of it.</p>
+<div class='highlight'><pre><code class='javascript'><span class='kd'>function</span> <span class='nx'>isEmpty</span><span class='p'>(</span><span class='nx'>value</span><span class='p'>)</span> <span class='p'>{</span>
+    <span class='kd'>var</span> <span class='nx'>result</span> <span class='o'>=</span> <span class='kc'>true</span><span class='p'>;</span>
+    <span class='k'>if</span> <span class='p'>(</span><span class='o'>!</span><span class='nx'>value</span><span class='p'>)</span> <span class='p'>{</span>
+      <span class='k'>return</span> <span class='nx'>result</span><span class='p'>;</span>
+    <span class='p'>}</span>
+    <span class='kd'>var</span> <span class='nx'>className</span> <span class='o'>=</span> <span class='nx'>toString</span><span class='p'>.</span><span class='nx'>call</span><span class='p'>(</span><span class='nx'>value</span><span class='p'>),</span>
+        <span class='nx'>length</span> <span class='o'>=</span> <span class='nx'>value</span><span class='p'>.</span><span class='nx'>length</span><span class='p'>;</span>
+
+    <span class='c1'>// I want to see what length is. So, here&#39;s my code:</span>
+    <span class='nx'>console</span><span class='p'>.</span><span class='nx'>log</span><span class='p'>(</span><span class='nx'>length</span><span class='p'>);</span>
+    <span class='k'>return</span><span class='p'>;</span>
+
+    <span class='k'>if</span> <span class='p'>((</span><span class='nx'>className</span> <span class='o'>==</span> <span class='nx'>arrayClass</span> <span class='o'>||</span> <span class='nx'>className</span> <span class='o'>==</span> <span class='nx'>stringClass</span> <span class='o'>||</span>
+        <span class='nx'>className</span> <span class='o'>==</span> <span class='nx'>argsClass</span> <span class='o'>||</span> <span class='p'>(</span><span class='nx'>noArgsClass</span> <span class='o'>&amp;&amp;</span> <span class='nx'>isArguments</span><span class='p'>(</span><span class='nx'>value</span><span class='p'>)))</span> <span class='o'>||</span>
+        <span class='p'>(</span><span class='nx'>className</span> <span class='o'>==</span> <span class='nx'>objectClass</span> <span class='o'>&amp;&amp;</span> <span class='k'>typeof</span> <span class='nx'>length</span> <span class='o'>==</span> <span class='s1'>&#39;number&#39;</span> <span class='o'>&amp;&amp;</span> <span class='nx'>isFunction</span><span class='p'>(</span><span class='nx'>value</span><span class='p'>.</span><span class='nx'>splice</span><span class='p'>)))</span> <span class='p'>{</span>
+      <span class='k'>return</span> <span class='o'>!</span><span class='nx'>length</span><span class='p'>;</span>
+    <span class='p'>}</span>
+    <span class='nx'>forOwn</span><span class='p'>(</span><span class='nx'>value</span><span class='p'>,</span> <span class='kd'>function</span><span class='p'>()</span> <span class='p'>{</span>
+      <span class='k'>return</span> <span class='p'>(</span><span class='nx'>result</span> <span class='o'>=</span> <span class='kc'>false</span><span class='p'>);</span>
+    <span class='p'>});</span>
+    <span class='k'>return</span> <span class='nx'>result</span><span class='p'>;</span>
+  <span class='p'>}</span>
+</code></pre></div>
+<p>It will display the variable <code>length</code> in the console and stop the execution of the rest of the function.</p>
+
+<h3 id='in_a_loop'>In a loop</h3>
+
+<p>More simple, just use <code>break;</code>. See:</p>
+<div class='highlight'><pre><code class='javascript'><span class='k'>for</span> <span class='p'>(</span><span class='nx'>x</span><span class='o'>=</span><span class='mi'>1</span><span class='p'>;</span> <span class='nx'>x</span><span class='o'>&lt;=</span><span class='mi'>10</span><span class='p'>;</span> <span class='nx'>x</span><span class='o'>++</span><span class='p'>)</span> <span class='p'>{</span>
+    <span class='nx'>a</span> <span class='o'>=</span> <span class='nx'>x</span><span class='o'>-</span><span class='mi'>7</span><span class='p'>;</span>
+
+    <span class='c1'>// What&#39;s in `a` variable</span>
+    <span class='nx'>console</span><span class='p'>.</span><span class='nx'>log</span><span class='p'>(</span><span class='nx'>a</span><span class='p'>);</span>
+    <span class='k'>break</span><span class='p'>;</span>
+<span class='p'>}</span>
+</code></pre></div>
+<h3 id='debugger'>debugger;</h3>
+
+<p>For the fellow developers who already use it, <a href='https://www.google.com/intl/en/chrome/browser/'>Chrome</a> has an handy instruction named <strong>debugger</strong> which acts as if you set a breakpoint in your javascript code.</p>
+
+<ul>
+<li>Type <code>debugger;</code> in your js source file,</li>
+
+<li>Open the chrome dev tools</li>
+
+<li>Reload your browser</li>
+</ul>
+
+<p>and once <a href='https://www.google.com/intl/en/chrome/browser/'>Chrome</a> will execute the debugger instruction, your script will be paused and the script panel of the Developer Tools will automatically open. The scripts panel has all the common debugger features like add/remove breakpoint, step over an instruction, step into a function and step out, see the call stack&#8230; Now you are ready for debugging!</p>
+
+<p>For a more in depth use of breakpoints in <a href='https://www.google.com/intl/en/chrome/browser/'>Chrome</a>, the <a href='https://developers.google.com/chrome-developer-tools/docs/scripts-breakpoints'>chrome dev center</a> is a good starting point. And for the firefox users, take a look here <a href='https://developer.mozilla.org/en-US/docs/Venkman'>Venkmam, the Mozilla&#8217;s JavaScript Debugger</a>.</p>
+
+<p><em>(Informations about chrome via <a href='https://github.com/lionelB'>lionelB</a>).</em></p>
+	</section>
+    <section class="report">
+        Any feedbacks, errors, typo, thanks, please contact me on twitter at <a href="https://www.twitter.com/_kud/">@_kud</a>.
+    </section>
+    <section class="about-author">
+        <img src="https://fr.gravatar.com/userimage/10327718/b7a61a57884f7e973154b1d737f8c380.jpeg" alt="" class="pic"> Erwann. Ex - back-end dev now front-end dev. Works at <a href="//www.playmedia.fr">playmedia</a>, company editing <a href="//www.playtv.fr">playtv.fr</a>. Also drummer, photographer, cinema lover and so on. Need <a href="//www.kud.fr">mooaar</a>?
+    </section>
+</article>
+        </section>
+        
+        <script type="text/javascript">
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-25156890-3']);
+            _gaq.push(['_trackPageview']);
+
+            (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+        </script>
+    </body>
+</html>

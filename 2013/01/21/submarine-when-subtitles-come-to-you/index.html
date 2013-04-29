@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="Manifest of a frontend dev.">
+        <meta name="keywords" content="dev,css,css3,html,html5,api,javascript,js,zepto,jquery,backbone,nodejs,node,frontend,front">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>_kud.blog -- Submarine: When subtitles come to you</title>
+        <link rel="shortcut icon" type="image/png" href="/favicon.png" />
+        <link rel="stylesheet" type="text/css" href="/blog/assets/css/style.css">
+        <link href="/blog/feed.xml" rel="alternate" type="application/rss+xml">
+    </head>
+    <body>
+        <aside>
+            <nav>
+                <ul>
+                    <li><a href="/blog/" class="active">Blog</a></li>
+                    
+                    <li><a href="http://www.kud.fr">Profile</a></li>
+                    <li><a href="https://www.github.com/kud">Github</a></li>
+                    <li><a href="https://www.twitter.com/_kud">Twitter</a></li>
+                </ul>
+            </nav>
+        </aside>
+        <section class="main">
+            <h1><a href="/blog/">Manifest of a frontend dev</a></h1>
+            <article>
+	<h2>Submarine: When subtitles come to you</h2>
+	<div class="date">
+        <span class="decoration">
+            <span class="month">Jan</span>
+            <span class="day">21</span>
+        </span>
+        <span class="year">2013</span>
+    </div>
+	<div class="author">By <a href="http://kud.io">Erwann Mest</a></div>
+    
+	<div class="category">
+		<ul>
+            
+                <li><a href="#">subtitle</a></li>
+            
+                <li><a href="#">tool</a></li>
+            
+		</ul>
+	</div>
+    
+	<section class="content">
+		<p>I must confess that I&#8217;m on Windows 7 at home. Not because I love it or I can&#8217;t deal without it but because I&#8217;m also a drummer, a photographer, a video gamer, and most of these stuff are (unfortunately) on Windows. I hope one day it won&#8217;t be anymore but for the moment it&#8217;s the case. Well, it&#8217;s not my point today. It will be also a future article about how to develop on Windows (yes, it&#8217;s possible, you will see).</p>
+
+<p>Today, I will talk about <a href='https://github.com/blazt/submarine'>submarine</a>, an excellent subtitle seeker. <a href='https://github.com/blazt/submarine'>Submarine</a> allows you to download easily subtitles of your favourite film or series. The command is simple (yes, it&#8217;s in cli, that&#8217;s why I love it):</p>
+
+<p><code>
+$ submarine -l fr *.avi
+</code></p>
+
+<p>It will search all french subtitles for every avi file. Isn&#8217;t it great? No stupid gui, no adware, no bullshit; plus it&#8217;s open source. \o/</p>
+
+<h3 id='quick_install_with_homebrew'>Quick install with Homebrew</h3>
+
+<pre><code>$ brew tap orpiske/alt
+$ brew install submarine</code></pre>
+
+<h3 id='man'>Man</h3>
+
+<pre><code>$ submarine
+Usage:
+  submarine [OPTION...] FILE... - download subtitles
+
+Help Options:
+  -h, --help              Show help options
+
+Application Options:
+  -l, --language=CODE     Set languages to filter (use &#39;-l help&#39; to list available options)
+  -s, --server=CODE       Set servers to use (use &#39;-s help&#39; to list available options)
+  -f, --force             Replace existing subtitles
+  -q, --quiet             Be quiet
+  -v, --verbose           Be verbose
+  -V, --version           Show program information
+
+Powered by:
+  OpenSubtitles (http://www.opensubtitles.org)
+  Podnapisi (http://www.podnapisi.net/)</code></pre>
+
+<h3 id='alternatives'>Alternatives</h3>
+
+<p>There&#8217;s an alternative written in Python that I didn&#8217;t try yet called <a href='https://github.com/patrickdessalle/periscope/'>Periscope</a>.</p>
+
+<p>Another one called <a href='https://github.com/Diaoul/subliminal'>Subliminal</a> but for some reasons (installation, manipulation, interface), I prefer <a href='https://github.com/blazt/submarine'>Submarine</a>.</p>
+	</section>
+    <section class="report">
+        Any feedbacks, errors, typo, thanks, please contact me on twitter at <a href="https://www.twitter.com/_kud/">@_kud</a>.
+    </section>
+    <section class="about-author">
+        <img src="https://fr.gravatar.com/userimage/10327718/b7a61a57884f7e973154b1d737f8c380.jpeg" alt="" class="pic"> Erwann. Ex - back-end dev now front-end dev. Works at <a href="//www.playmedia.fr">playmedia</a>, company editing <a href="//www.playtv.fr">playtv.fr</a>. Also drummer, photographer, cinema lover and so on. Need <a href="//www.kud.fr">mooaar</a>?
+    </section>
+</article>
+        </section>
+        
+        <script type="text/javascript">
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-25156890-3']);
+            _gaq.push(['_trackPageview']);
+
+            (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+        </script>
+    </body>
+</html>
