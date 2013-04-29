@@ -1,4 +1,4 @@
 {
-  "directory" : "src/assets/components",
-  "json"      : "component.json"
+    "directory": "src/assets/_bower_components",
+    "json": "bower.json"
 }

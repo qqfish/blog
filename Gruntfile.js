@@ -1,50 +1,103 @@
+/* globals module:true require:true */
 module.exports = function(grunt) {
 
-  // Imports
-  grunt.loadNpmTasks('grunt-contrib-jshint');
-  grunt.loadNpmTasks('grunt-contrib-clean');
-  grunt.loadNpmTasks('grunt-contrib-copy');
-  grunt.loadNpmTasks('grunt-contrib-concat');
-  grunt.loadNpmTasks('grunt-jekyll');
-  grunt.loadNpmTasks('grunt-contrib-compass');
-  grunt.loadNpmTasks('grunt-contrib-uglify');
-  grunt.loadNpmTasks('grunt-contrib-imagemin');
-  grunt.loadNpmTasks('grunt-regarde');
-  grunt.loadNpmTasks('grunt-contrib-livereload');
-  grunt.loadNpmTasks('grunt-shell');
+  // imports
+  require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
+  grunt.loadNpmTasks('assemble');
 
-  // Project configuration.
-  var happyPlan = grunt.file.readJSON('happy-plan.json');
+  // set option
+  grunt.option('env', typeof grunt.option('env') !== 'undefined' ? grunt.option('env') : 'dev');
+  grunt.log.writeln('Environnment is'.grey, grunt.option('env').cyan);
 
+  var deepmerge = require('deepmerge');
+  
+  var happyPlan = grunt.file.readJSON('happy-plan.default.json');
+  if (grunt.file.exists('happy-plan.json')) {
+    happyPlan = deepmerge(happyPlan, grunt.file.readJSON('happy-plan.json'));
+  }
+  
+  // project configuration
+  var pkg = grunt.file.readJSON('package.json');
+
+  // grunt configuration
   grunt.initConfig({
 
+    pkg: pkg,
     happyPlan: happyPlan,
-
+    
     jshint: happyPlan.grunt.jshint,
+    
+    assemble: {
+      options: {
+        // pass variables
+        __warningComment__: "DO NOT EDIT THIS GENERATED FILE, IT WILL BE OVERWRITTEN AUTOMATICALLY - REFER TO Gruntfile OR configs/*",
+        env: grunt.option('env'),
+        pkg: pkg,
+        happyPlan: happyPlan,
+        
+        engine: 'handlebars'
+      },
+      jekyll: {
+        options: {
+          ext: '.yml'
+        },
+        files: {
+          '<%= happyPlan.build.jekyll._ %>/_config.yml': ['<%= happyPlan.src.configs.jekyll %>']
+        }
+      },
+      compass: {
+        options: {
+          ext: '.rb',
+          require: happyPlan.compass.require.length>0 ? "require \"" + happyPlan.compass.require.join("\"\nrequire \"") + "\"" : "",
+          additional_import_paths: happyPlan.compass.additional_import_paths ? ("additional_import_paths = [" + (happyPlan.compass.additional_import_paths.length>0 ? ("\n    \"" + happyPlan.compass.additional_import_paths.join("\",\n    \"") + "\"\n]") : "]")) : ''
+        },
+        files: {
+          'config.rb': ['<%= happyPlan.src.configs.compass %>']
+        }
+      }
+    },
 
-    // Remove folders and files
+    // open in browser
+    open : {
+      dev : {
+        path: 'http://<%= happyPlan.localhost.hostname %>:<%= happyPlan.localhost.port %>/'
+      }
+    },
+
+    // server
+    connect: {
+      server: {
+        options: {
+          port: '<%= happyPlan.localhost.port %>',
+          base: 'dist',
+          hostname: '' // Must be empty to be accessible everywhere and not only "localhost"
+        }
+      }
+    },
+
+    // livereload
+    livereload: {
+      port: 35728
+    },
+
+    // remove folders and files
     clean: {
       dist: {
         src: ['<%= happyPlan.dist.path %>']
       },
+      build: {
+        src: ['<%= happyPlan.build.path %>']
+      },
       jekyll: {
-        src: ['<%= happyPlan.dist.path %>/jekyll']
+        src: ['<%= happyPlan.build.jekyll._ %>']
       }
     },
 
-    // Static file generator
+    // static file generator
     jekyll: {
-      server : {
-        src:            '<%= happyPlan.src.path %>',
-        dest:           '<%= happyPlan.dist.path %>',
-        server:         true,
-        server_port:    8000,
-        auto:           false,
-        baseurl:        '<%= happyPlan.baseUrl %>'
-      },
-      dist: {
-        src:            'dist/jekyll/',
-        dest:           'dist/',
+      compile: {
+        src:            '<%= happyPlan.build.jekyll._ %>',
+        dest:           '<%= happyPlan.build.jekyll.dest %>',
         baseurl:        '<%= happyPlan.baseUrl %>',
         pygments:       true
       }
@@ -52,87 +105,92 @@ module.exports = function(grunt) {
 
     // Copy folders and files
     copy: {
+      cssAsScss: {
+        files: [{
+          expand: true,
+          cwd: '<%= happyPlan.src.assets.bower_components %>',
+          src: ['**/*.css'],
+          dest: '<%= happyPlan.src.assets.bower_components %>',
+          filter: 'isFile',
+          ext:    ".scss"
+        }]
+      },
+      jekyllBuildToDist: {
+        files: [{
+          expand: true,
+          cwd: '<%= happyPlan.build.jekyll.dest %>',
+          src: ['**'],
+          dest: '<%= happyPlan.dist.root %>'
+        }]
+      },
       jekyllPages: {
-        files: [
-          {
-            expand: true,
-            cwd: 'src/pages/',
-            src: ['**'],
-            dest: 'dist/jekyll/'
-          }
-        ]
+        files: [{
+          expand: true,
+          cwd: '<%= happyPlan.src.jekyll.pages %>',
+          src: ['**'],
+          dest: '<%= happyPlan.build.jekyll._ %>'
+        }]
       },
       jekyllPosts: {
-        files: [
-          {
-              expand: true,
-              cwd: 'src/posts/',
-              src: ['**'],
-              dest: 'dist/jekyll/_posts/'
-          }
-        ]
+        files: [{
+          expand: true,
+          cwd: '<%= happyPlan.src.jekyll.posts %>',
+          src: ['**', '!_*'],
+          dest: '<%= happyPlan.build.jekyll._ %>/_posts'
+        }]
       },
       jekyllLayouts: {
-        files: [
-          {
-            expand: true,
-            cwd: 'src/layouts/',
-            src: ['**'],
-            dest: 'dist/jekyll/_layouts/'
-          }
-        ]
+        files: [{
+          expand: true,
+          cwd: '<%= happyPlan.src.jekyll.layouts %>',
+          src: ['**'],
+          dest: '<%= happyPlan.build.jekyll._ %>/_layouts'
+        }]
       },
       jekyllPartials: {
-        files: [
-          {
-            expand: true,
-            cwd: 'src/partials/',
-            src: ['**'],
-            dest: 'dist/jekyll/_includes/'
-          }
-        ]
+        files: [{
+          expand: true,
+          cwd: '<%= happyPlan.src.jekyll.partials %>',
+          src: ['**'],
+          dest: '<%= happyPlan.build.jekyll._ %>/_includes'
+        }]
       },
-      jekyllConfig: {
-        files: [
-          {
-            src: 'src/config/config.yml',
-            dest: 'dist/jekyll/_config.yml'
-          }
-        ]
-      },
+
       static: {
-        files: [
-          {
-            expand: true,
-            cwd: '<%= happyPlan.src.assets.static %>',
-            src: ['**'],
-            dest: '<%= happyPlan.dist.assets.static %>/'
-          }
-        ]
+        files: [{
+          expand: true,
+          cwd: '<%= happyPlan.src.assets.static %>',
+          src: ['**/*', '!**/_*/**'],
+          dest: '<%= happyPlan.dist.assets.static %>'
+        }]
       },
       images: {
-        files: [
-          {
-            expand: true,
-            cwd: '<%= happyPlan.src.assets.images %>/',
-            src: ['**'],
-            dest: '<%= happyPlan.dist.assets.images %>/'
-          }
-        ]
+        files: [{
+          expand: true,
+          cwd: '<%= happyPlan.src.assets.images %>',
+          src: ['**'],
+          dest: '<%= happyPlan.dist.assets.images %>'
+        }]
       },
       medias: {
-        files: [
-          {
-            expand: true,
-            cwd: '<%= happyPlan.src.medias %>/',
-            src: ['**'],
-            dest: '<%= happyPlan.dist.medias %>/'
-          }
-        ]
+        files: [{
+          expand: true,
+          cwd: '<%= happyPlan.src.medias %>',
+          src: ['**'],
+          dest: '<%= happyPlan.dist.medias %>'
+        }]
+      },
+      root: {
+        files: [{
+          expand: true,
+          cwd: '<%= happyPlan.src.path %>',
+          src: ['**/*','!**/_*/**'],
+          dest: '<%= happyPlan.dist.root %>'
+        }]
       }
     },
 
-    // Concat scripts
+    // concat scripts
     concat: {
       dist: {
         files: {
@@ -141,7 +199,7 @@ module.exports = function(grunt) {
       }
     },
 
-    // Minify javascript
+    // minify javascript
     uglify: {
       dist: {
         files: {
@@ -149,50 +207,24 @@ module.exports = function(grunt) {
         }
       }
     },
-
-    /*
-    Doesn't work
+    
     webfont: {
-      icons: {
-        src: '<%= happyPlan.src.assets.fontcustom %>/*.svg',
-        dest: '<%= happyPlan.dist.assets.fonts %>/icons',
+      svgToFonts: {
+        src: '<%= happyPlan.src.assets.webfont %>/*.svg',
+        dest: '<%= happyPlan.dist.assets.fonts %>',
         destCss: '<%= happyPlan.src.assets.styles %>',
         options: {
-            styles: 'icon',
+            styles: 'font-icons',
             stylesheet: 'scss',
             hashes: false
         }
       }
-    },*/
-
-    // Some shell cmds
-    shell: {
-      svgToFonts: {
-        command: './bin/fontcustom.sh',
-        options: {
-          stdout: true
-        }
-      }
     },
 
-    // Time to have some styles!
+    // time to have some styles!
     compass: {
       dev: {
         options: {
-          sassDir: '<%= happyPlan.src.assets.styles %>',
-          cssDir: '<%= happyPlan.dist.assets.styles %>',
-          imagesDir: '<%= happyPlan.src.assets.images %>',
-          javascriptsDir: '<%= happyPlan.src.assets.scripts %>',
-          fontsDir: '<%= happyPlan.src.assets.fonts %>',
-
-          // here we give to compass dist path (without dist root)
-          raw: [
-              'httppath = "' + happyPlan.baseUrl + '"',
-              'http_images_path = "' + happyPlan.baseUrl + happyPlan.dist.assets.images.replace(happyPlan.dist.path, '') + '"',
-              'http_javascripts_path = "' + happyPlan.baseUrl + happyPlan.dist.assets.scripts.replace(happyPlan.dist.path, '') + '"',
-              'http_fonts_path = "' + happyPlan.baseUrl + happyPlan.dist.assets.static.replace(happyPlan.dist.path, '') + '/fonts"'
-          ].join("\n"),
-
           outputStyle: 'expanded',
           noLineComments: false,
           debugInfo: true
@@ -200,28 +232,13 @@ module.exports = function(grunt) {
       },
       dist: {
         options: {
-          sassDir: '<%= happyPlan.src.assets.styles %>',
-          cssDir: '<%= happyPlan.dist.assets.styles %>',
-          imagesDir: '<%= happyPlan.src.assets.images %>',
-          javascriptsDir: '<%= happyPlan.src.assets.scripts %>',
-          fontsDir: '<%= happyPlan.src.assets.fonts %>',
-
-          // here we give to compass dist path (without dist root)
-          raw: [
-              'httppath = "' + happyPlan.baseUrl + '"',
-              'http_images_path = "' + happyPlan.baseUrl + happyPlan.dist.assets.images.replace(happyPlan.dist.path, '') + '"',
-              'http_javascripts_path = "' + happyPlan.baseUrl + happyPlan.dist.assets.scripts.replace(happyPlan.dist.path, '') + '"',
-              'http_fonts_path = "' + happyPlan.baseUrl + happyPlan.dist.assets.static.replace(happyPlan.dist.path, '') + '/fonts"'
-          ].join("\n"),
-
           outputStyle: 'compressed',
-          noLineComments: true,
-          force: true
+          noLineComments: true
         }
       }
     },
 
-    // Optimise images
+    // optimize images
     imagemin: {
       dist: {
         options: {
@@ -245,54 +262,104 @@ module.exports = function(grunt) {
       }
     },
 
+    // watch
     regarde: {
-      jshint: {
-          files: [
-              '**/*.js',
-              '**/*.json'
-          ],
-          tasks: ['jshint']
+      configs: {
+        files: [
+          '<%= happyPlan.src.configs._ %>/*.*',
+          '!<%= happyPlan.src.configs.jekyll %>'
+        ],
+        tasks: ['happyPlan:configs']
       },
       html: {
-          files: ['<%= happyPlan.src.path %>/**/*.{html,md,txt}'],
-          tasks: ['dev']
+          files: [
+            '<%= happyPlan.src.path %>**/*.{html,md,txt,xml}',
+            '<%= happyPlan.src.configs.jekyll %>'
+          ],
+          tasks: ['jekyll:dist']
       },
       js: {
-          files: ['<%= happyPlan.src.assets.scripts %>/**/*'],
+          files: ['<%= happyPlan.src.assets.scripts %>/**/*.*'],
           tasks: ['concat:dist']
       },
       scss: {
-          files: ['<%= happyPlan.src.assets.styles %>/**/*'],
+          files: ['<%= happyPlan.src.assets.styles %>/**/*.*'],
           tasks: ['compass:dev']
       },
       static: {
-          files: ['<%= happyPlan.src.assets.static %>/**/*'],
+          files: [
+            '<%= happyPlan.src.assets.static %>**/*.*',
+            '!<%= happyPlan.src.assets.static %>**/_*/**'
+          ],
           tasks: ['copy:static']
       },
       images: {
-          files: ['<%= happyPlan.src.assets.images %>/**/*'],
+          files: ['<%= happyPlan.src.assets.images %>/**/*.*'],
           tasks: ['copy:images']
       },
-      icons: {
-          files: ['<%= happyPlan.src.assets.fontcustom %>/icons/*.svg'],
+      svgToFonts: {
+          files: ['<%= happyPlan.src.assets.webfont %>/*.svg'],
           tasks: ['']
       },
       livereload: {
-          files: ['<%= happyPlan.dist.assets.path %>/**'],
+          files: ['<%= happyPlan.dist.path %>**/*.*'],
           tasks: ['livereload']
       }
+    },
+    
+    // Unit tests.
+    nodeunit: {
+      tests: ['test/*_test.js']
     }
   });
 
-  grunt.registerTask('default', ['dev', 'livereload-start', 'regarde']);
-  grunt.registerTask('build', ['clean:dist', 'jekyll:copy', 'jekyll:dist', 'clean:jekyll', 'shell:svgToFonts', 'copy:images', 'copy:static', 'copy:medias', 'concat:dist']);
-  grunt.registerTask('dev', ['jshint', 'build', 'compass:dev']);
-  grunt.registerTask('dist', ['jshint', 'build', 'compass:dist', 'uglify:dist', 'imagemin:dist']);
+  // custom task
+  grunt.registerTask('happyPlan:configs_sample', "Create default config template files from .sample if it doesn't exist", function() {
+    ['jekyll', 'compass'].forEach(function(element, index, array) {
+      var configFile = grunt.template.process(happyPlan.src.configs[element]);
+      if (!require('fs').existsSync(configFile)) {
+        grunt.file.write(configFile, grunt.file.read(configFile + '.sample'));
+        grunt.log.writeln(configFile.cyan + ' created.'.grey);
+      }
+    });
+  });
+  
+  grunt.registerTask('happyPlan:config_bowerrc', "Create a .bowerrc file from the Happy-Plan configuration", function() {
+    grunt.file.write('.bowerrc', JSON.stringify(grunt.config.get('happyPlan').bower.bowerrc, null, 4));
+    grunt.log.writeln('.bowerrc'.cyan + ' created.'.grey);
+  });
+  
+  // configs shouldn't be fired each build, because if we do so, compass just start with a fresh cache (no-cache = fews seconds...)
+  // So, 'regarde' fire 'configs' :)
+  grunt.registerTask('happyPlan:configs', ['assemble:compass', 'happyPlan:config_bowerrc']);
 
-  grunt.registerTask('jekyll:copy', ['copy:jekyllPages', 'copy:jekyllPosts', 'copy:jekyllPartials', 'copy:jekyllConfig', 'copy:jekyllLayouts']);
+  // webfont:svgToFonts wrapper
+  grunt.registerTask('happyPlan:svgToFonts', "Execute or skip 'webfont:svgToFonts' depending of the presence of SVG files in the '<%= happyPlan.src.assets.webfont %>' folder.", function() {
+    if (require('fs').existsSync('<%= happyPlan.src.assets.webfont %>/*.svg')) {
+      grunt.log.writeln("SVG files in '<%= happyPlan.src.assets.webfont %>'. Executing 'webfont:svgToFonts'.");
+      grunt.task.run('webfont:svgToFonts');
+    }
+    else {
+      grunt.log.writeln("No SVG file in '<%= happyPlan.src.assets.webfont %>'. Skipping 'webfont:svgToFonts'.");
+    }
+  });
 
-  grunt.registerTask('server', 'jekyll:server');
+  grunt.registerTask('happyPlan:init', ['happyPlan:configs_sample', 'happyPlan:configs']);
+  
+  // jekyll
+  grunt.registerTask('jekyll:config', ['assemble:jekyll']);
+  grunt.registerTask('jekyll:copy',   ['copy:jekyllPages', 'copy:jekyllPosts', 'copy:jekyllPartials', 'copy:jekyllLayouts']);
+  grunt.registerTask('jekyll:build',  ['clean:jekyll','jekyll:config', 'jekyll:copy', 'jekyll:compile']);
+  grunt.registerTask('jekyll:dist',   ['jekyll:build', 'copy:jekyllBuildToDist']);
+  
+  // public commands
+  grunt.registerTask('build',   ['clean:dist', 'happyPlan:init', 'jekyll:dist', 'copy:root', 'happyPlan:svgToFonts', 'copy:images', 'copy:static', 'copy:medias', 'concat:dist']);
+  grunt.registerTask('dev',     ['jshint', 'build', 'compass:dev']);
+  grunt.registerTask('dist',    ['jshint', 'build', 'compass:dist', 'uglify:dist', 'imagemin:dist', 'clean:build']);
+  grunt.registerTask('default', ['dev', 'livereload-start', 'server', 'open:dev', 'regarde']);
+  
+  // server
+  grunt.registerTask('server', 'connect:server');
 
-  // waiting for https://github.com/gruntjs/grunt-contrib-imagemin/issues/11 to use just 'build' here
-  grunt.registerTask('test', ['jshint', 'build', 'compass:dist', 'uglify:dist', 'copy:images']);
+  grunt.registerTask('test', ['dist', 'nodeunit']);
 };
