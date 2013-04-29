@@ -1,6 +1,6 @@
 {
   "dist": {
-    "path" : "dist/blog"
+    "path" : "dist/blog/"
   },
-  "baseUrl": "blog"
+  "baseUrl": "/blog"
 }
